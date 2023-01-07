@@ -1,3 +1,4 @@
+import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +22,17 @@ class _PinPageState extends State<PinPage> {
     }
     // print(pinController.text);
     // Untuk membuat
-    if (pinController.text == '123123') {
-      Navigator.pop(context, true);
+
+    ///Snackbar akan tmpil error jika jumlah text yg di input 6 dan salah
+    if (pinController.text.length == 6) {
+      if (pinController.text == '123123') {
+        Navigator.pop(context, true);
+      } else {
+        showCustomSnackbar(
+          context,
+          'PIN yang anda masukkan salah!',
+        );
+      }
     }
   }
 
