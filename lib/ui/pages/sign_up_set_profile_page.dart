@@ -1,13 +1,20 @@
+import 'package:bank/models/signup_form_model.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:bank/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class SignUpSetProfilePage extends StatelessWidget {
-  const SignUpSetProfilePage({Key? key});
+  final SignUpFormModel data;
+
+  const SignUpSetProfilePage({
+    Key? key,
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
+    // print(data.toJson());
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
