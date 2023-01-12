@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:bank/models/signup_form_model.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
