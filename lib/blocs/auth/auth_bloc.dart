@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:bank/models/sign_in_form_model.dart';
 import 'package:bank/models/signup_form_model.dart';
 import 'package:bank/models/user_model.dart';
 import 'package:bank/services/auth_service.dart';
@@ -25,10 +26,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         }
       }
 
+// ? REGISTER
       if (event is AuthRegister) {
         try {
           emit(AuthLoading());
           final user = await AuthService().register(event.data);
+          emit(AuthSuccess(user));
+        } catch (e) {
+          emit(AuthFailed(e.toString()));
+        }
+      }
+
+// ? LOGIN
+      if (event is AuthLogin) {
+        try {
+          emit(AuthLoading());
+          final user = await AuthService().login(event.data);
           emit(AuthSuccess(user));
         } catch (e) {
           emit(AuthFailed(e.toString()));

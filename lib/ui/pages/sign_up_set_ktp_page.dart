@@ -42,7 +42,10 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
           }
           if (state is AuthSuccess) {
             Navigator.pushNamedAndRemoveUntil(
-                context, '/home', (route) => false);
+              context,
+              '/home',
+              (route) => false,
+            );
           }
         },
         builder: (context, state) {
@@ -137,7 +140,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                                   widget.data.copyWith(
                                     ktp: selectedImage == null
                                         ? null
-                                        : 'data:image/png;base63,' +
+                                        : 'data:image/png;base64,' +
                                             base64Encode(
                                               File(selectedImage!.path)
                                                   .readAsBytesSync(),
@@ -161,9 +164,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                 title: 'Skip For Now',
                 onPressed: () {
                   context.read<AuthBloc>().add(
-                        AuthRegister(
-                          widget.data,
-                        ),
+                        AuthRegister(widget.data),
                       );
                 },
               )

@@ -6,6 +6,7 @@ class UserModel {
   final String? username;
   final int? verified;
   final String? profilePicture;
+  final String? ktp;
   final int? balance;
   final String? cardNumber;
   final String? pin;
@@ -20,19 +21,37 @@ class UserModel {
     this.username,
     this.verified,
     this.profilePicture,
+    this.ktp,
     this.balance,
     this.cardNumber,
     this.pin,
     this.token,
   });
 
+  // Map<String, dynamic> toJson() {
+  //   final Map<String, dynamic> data = <String, dynamic>{};
+  //   data['id'] = id;
+  //   data['name'] = name;
+  //   data['email'] = email;
+  //   data['password'] = password;
+  //   data['username'] = username;
+  //   data['verified'] = verified;
+  //   data['profile_picture'] = profilePicture;
+  //   data['balance'] = balance;
+  //   data['card_number'] = cardNumber;
+  //   data['pin'] = pin;
+  //   data['token'] = token;
+  //   return data;
+  // }
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         id: json['id'],
         name: json['name'],
         email: json['email'],
         username: json['username'],
+        password: json['password'],
         verified: json['verified'],
         profilePicture: json['profile_picture'],
+        ktp: json['ktp'],
         balance: json['balance'],
         cardNumber: json['card_number'],
         pin: json['pin'],
@@ -57,6 +76,7 @@ class UserModel {
         balance: balance ?? this.balance,
         verified: verified,
         profilePicture: profilePicture,
+        ktp: ktp,
         cardNumber: cardNumber,
         token: token,
       );

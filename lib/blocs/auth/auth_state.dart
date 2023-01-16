@@ -24,7 +24,6 @@ class AuthCheckEmailSuccess extends AuthState {}
 class AuthSuccess extends AuthState {
   final UserModel user;
   const AuthSuccess(this.user);
-
   @override
   List<Object> get props => [user];
 }

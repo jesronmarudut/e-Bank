@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:bank/models/sign_in_form_model.dart';
 import 'package:bank/models/signup_form_model.dart';
 import 'package:bank/models/user_model.dart';
 import 'package:bank/shared/shared_values.dart';
@@ -28,20 +29,44 @@ class AuthService {
 
   Future<UserModel> register(SignUpFormModel data) async {
     try {
+      print(data.toJson());
       final res = await http.post(
         Uri.parse('$baseUrl/register'),
         body: data.toJson(),
       );
-
       if (res.statusCode == 200) {
-        UserModel user = UserModel.fromJson(jsonDecode(res.body));
+        UserModel user = UserModel.fromJson(
+          jsonDecode(res.body),
+        );
         user = user.copyWith(password: data.password);
-
         return user;
       } else {
         throw jsonDecode(res.body)['message'];
       }
     } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
+
+  Future<UserModel> login(SignInFormModel data) async {
+    try {
+      // print(data.toJson());
+      final res = await http.post(
+        Uri.parse('$baseUrl/login'),
+        body: data.toJson(),
+      );
+      if (res.statusCode == 200) {
+        UserModel user = UserModel.fromJson(
+          jsonDecode(res.body),
+        );
+        user = user.copyWith(password: data.password);
+        return user;
+      } else {
+        throw jsonDecode(res.body)['message'];
+      }
+    } catch (e) {
+      print(e);
       rethrow;
     }
   }
