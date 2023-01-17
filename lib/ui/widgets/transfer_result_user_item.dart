@@ -30,7 +30,7 @@ class TransferResultUserItem extends StatelessWidget {
         color: warnaGrey,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isSelected ? warnaPutih : warnaGrey,
+          color: isSelected ? warnaGrey : warnaGrey2,
           width: 2,
         ),
       ),

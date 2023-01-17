@@ -21,7 +21,7 @@ class DataPackagePage extends StatelessWidget {
           ),
           Text(
             'Phone Number',
-            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+            style: whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
           ),
           const SizedBox(height: 14),
           const CustomFormField(
@@ -33,7 +33,7 @@ class DataPackagePage extends StatelessWidget {
           ),
           Text(
             'Select Package',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

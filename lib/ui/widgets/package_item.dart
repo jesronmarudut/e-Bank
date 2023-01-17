@@ -24,10 +24,10 @@ class PackageItem extends StatelessWidget {
         vertical: 22,
       ),
       decoration: BoxDecoration(
-        color: whiteColor,
-        borderRadius: BorderRadius.circular(20),
+        color: warnaGrey,
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: isSelected ? blueColor : whiteColor,
+          color: isSelected ? warnaGrey3 : warnaGrey2,
           width: 2,
         ),
       ),
@@ -37,7 +37,7 @@ class PackageItem extends StatelessWidget {
           const SizedBox(height: 13),
           Text(
             '${amount}GB',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 32,
               fontWeight: semiBold,
             ),
@@ -47,7 +47,7 @@ class PackageItem extends StatelessWidget {
           ),
           Text(
             formatCurrency(price),
-            style: greyTextStyle.copyWith(
+            style: greyTextStyle3.copyWith(
               fontSize: 12,
             ),
           ),

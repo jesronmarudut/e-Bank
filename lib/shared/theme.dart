@@ -25,6 +25,7 @@ Color warnaPutih = const Color(0xffF7F7F7);
 TextStyle blackTextStyle = GoogleFonts.poppins(color: warnaHitam);
 TextStyle whiteTextStyle = GoogleFonts.poppins(color: warnaPutih);
 TextStyle greyTextStyle = GoogleFonts.poppins(color: warnaGrey);
+TextStyle greyTextStyle2 = GoogleFonts.poppins(color: warnaGrey2);
 TextStyle greyTextStyle3 = GoogleFonts.poppins(color: warnaGrey3);
 TextStyle blueTextStyle = GoogleFonts.poppins(color: warnaBiru);
 TextStyle greenTextStyle = GoogleFonts.poppins(color: greenColor);

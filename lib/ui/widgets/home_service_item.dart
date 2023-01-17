@@ -24,7 +24,7 @@ class HomeServiceItem extends StatelessWidget {
             height: 70,
             margin: const EdgeInsets.only(bottom: 8),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
               color: warnaGrey,
             ),
             child: Center(
@@ -36,7 +36,7 @@ class HomeServiceItem extends StatelessWidget {
           ),
           Text(
             title,
-            style: blackTextStyle.copyWith(fontWeight: medium),
+            style: whiteTextStyle.copyWith(fontWeight: medium),
           ),
         ],
       ),

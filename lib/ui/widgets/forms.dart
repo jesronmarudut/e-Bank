@@ -34,12 +34,12 @@ class CustomFormField extends StatelessWidget {
             height: 8,
           ),
         TextFormField(
-          style: whiteTextStyle,
           obscureText: obscureText,
           controller: controller,
           keyboardType: keyboardType,
           decoration: InputDecoration(
             hintText: !isShowTitle ? title : null,
+            hintStyle: greyTextStyle3,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
             ),

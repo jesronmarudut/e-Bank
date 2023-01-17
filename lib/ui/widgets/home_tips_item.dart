@@ -23,22 +23,22 @@ class HomeTipsItem extends StatelessWidget {
         }
       },
       child: Container(
-        width: 155,
+        width: 220,
         height: 176,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(5),
           color: warnaGrey,
         ),
         child: Column(
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(20),
+                top: Radius.circular(5),
               ),
               child: Image.asset(
                 imageUrl,
-                width: 155,
-                height: 110,
+                width: 220,
+                height: 120,
                 fit: BoxFit.cover,
               ),
             ),

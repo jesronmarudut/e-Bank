@@ -21,7 +21,7 @@ class ProfilePage extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 22),
             decoration: BoxDecoration(
-              color: warnaGrey2,
+              color: warnaGrey,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(

@@ -28,7 +28,7 @@ class TransferPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           const CustomFormField(
-            title: 'By Username',
+            title: 'Username',
             isShowTitle: false,
           ),
           // buildRecentUsers()

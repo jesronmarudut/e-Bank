@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: warnaBiru,
+        backgroundColor: warnaKuning,
         child: Image.asset(
           'assets/ic_plus_circle.png',
           width: 24,
@@ -175,31 +175,33 @@ class HomePage extends StatelessWidget {
           Text(
             'Shayna Hanna',
             style: whiteTextStyle.copyWith(
-              fontSize: 18,
-              fontWeight: medium,
+              fontSize: 20,
+              fontWeight: semiBold,
             ),
           ),
           const SizedBox(height: 28),
           Text(
-            '**** **** **** 1280',
+            '4764 9043 0479',
             style: whiteTextStyle.copyWith(
-              fontSize: 18,
-              fontWeight: medium,
-              letterSpacing: 5,
+              fontSize: 22,
+              fontWeight: bold,
+              letterSpacing: 3,
             ),
           ),
-          const SizedBox(
-            height: 21,
-          ),
+          const SizedBox(height: 25),
           Text(
             'Balance',
-            style: whiteTextStyle,
+            style: whiteTextStyle.copyWith(
+              fontSize: 20,
+              fontWeight: semiBold,
+            ),
           ),
           Text(
             formatCurrency(12500),
             style: whiteTextStyle.copyWith(
               fontSize: 24,
-              fontWeight: semiBold,
+              fontWeight: bold,
+              letterSpacing: 1.5,
             ),
           )
         ],
@@ -214,7 +216,7 @@ class HomePage extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         color: warnaGrey,
       ),
       child: Column(
@@ -325,7 +327,7 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(22),
             margin: const EdgeInsets.only(top: 14),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(5),
               color: warnaGrey,
             ),
             child: Column(
@@ -422,31 +424,38 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          Wrap(
-            runSpacing: 18,
-            spacing: 17,
-            children: const [
-              HomeTipsItem(
-                imageUrl: 'assets/img_tips1.png',
-                title: 'Best tips for using a credit card',
-                url: 'https://www.google.com',
-              ),
-              HomeTipsItem(
-                imageUrl: 'assets/img_tips2.png',
-                title: 'Spot the good pie of finance model',
-                url: 'https://www.google.com',
-              ),
-              HomeTipsItem(
-                imageUrl: 'assets/img_tips3.png',
-                title: 'Great hack to get better advices',
-                url: 'https://www.google.com',
-              ),
-              HomeTipsItem(
-                imageUrl: 'assets/img_tips4.png',
-                title: 'Save more penny buy this instead',
-                url: 'https://www.google.com',
-              ),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Wrap(
+              runSpacing: 18,
+              spacing: 17,
+              children: const [
+                HomeTipsItem(
+                  imageUrl: 'assets/img_tips1.png',
+                  title:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  url: 'https://www.google.com',
+                ),
+                HomeTipsItem(
+                  imageUrl: 'assets/img_tips2.png',
+                  title:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  url: 'https://www.google.com',
+                ),
+                HomeTipsItem(
+                  imageUrl: 'assets/img_tips3.png',
+                  title:
+                      'Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  url: 'https://www.google.com',
+                ),
+                HomeTipsItem(
+                  imageUrl: 'assets/img_tips4.png',
+                  title:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  url: 'https://www.google.com',
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -469,7 +478,7 @@ class MoreDialog extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: warnaGrey2,
+          color: warnaHitam,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -479,9 +488,7 @@ class MoreDialog extends StatelessWidget {
               style:
                   whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
             ),
-            const SizedBox(
-              height: 13,
-            ),
+            const SizedBox(height: 13),
             Wrap(
               spacing: 29,
               runSpacing: 20,
@@ -519,7 +526,7 @@ class MoreDialog extends StatelessWidget {
                   onTap: () {},
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

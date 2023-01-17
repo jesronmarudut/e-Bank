@@ -20,7 +20,7 @@ class HomeUserItem extends StatelessWidget {
         right: 17,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(5),
         color: warnaGrey,
       ),
       child: Column(
