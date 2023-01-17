@@ -35,7 +35,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AuthBloc(),
+          //? AuthBloc akan cek apakah ada user yg tersimpad di dalam local
+          create: (context) => AuthBloc()..add(AuthGetCurrentUser()),
         ),
       ],
       child: MaterialApp(

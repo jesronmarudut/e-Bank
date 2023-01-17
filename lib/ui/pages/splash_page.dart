@@ -1,38 +1,45 @@
 import 'dart:async';
-
+import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+//? Untuk melakukan timer pada splash page
+// @override
+// void initState() {
+//   Timer(const Duration(seconds: 2), () {
+//     Navigator.pushNamedAndRemoveUntil(
+//         context, '/onboarding', (route) => false);
+//   });
+// }
 
-  @override
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    // TODO: implement initState
-
-    Timer(const Duration(seconds: 2), () {
-      Navigator.pushNamedAndRemoveUntil(
-          context, '/onboarding', (route) => false);
-    });
-  }
+class SplashPage extends StatelessWidget {
+  const SplashPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: darkBackgroundColor,
-      body: Center(
-        child: Container(
-          width: 155,
-          height: 50,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/img_logo_dark.png'),
+      body: BlocListener<AuthBloc, AuthState>(
+        listener: (context, state) {
+          if (state is AuthSuccess) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, '/home', (route) => false);
+          }
+          if (state is AuthFailed) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, '/onboarding', (route) => false);
+          }
+        },
+        child: Center(
+          child: Container(
+            width: 155,
+            height: 50,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/img_logo_dark.png'),
+              ),
             ),
           ),
         ),
