@@ -49,7 +49,7 @@ class _PinPageState extends State<PinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkBackgroundColor,
+      backgroundColor: warnaHitam,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 58),
@@ -74,7 +74,7 @@ class _PinPageState extends State<PinPage> {
                   obscureText: true,
                   cursorColor: greyColor,
                   obscuringCharacter: '*',
-                  style: whiteTextStyle.copyWith(
+                  style: greenTextStyle.copyWith(
                     fontSize: 36,
                     fontWeight: medium,
                     letterSpacing: 16,
@@ -166,7 +166,7 @@ class _PinPageState extends State<PinPage> {
                       height: 60,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: numberBackgroundColor,
+                        color: warnaMerah2,
                       ),
                       child: Center(
                         child: Icon(

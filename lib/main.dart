@@ -19,7 +19,7 @@ import 'package:bank/ui/pages/splash_page.dart';
 import 'package:bank/ui/pages/topup_amount_page.dart';
 import 'package:bank/ui/pages/topup_page.dart';
 import 'package:bank/ui/pages/topup_success.dart';
-import 'package:bank/ui/pages/transfer_amoun_page.dart';
+import 'package:bank/ui/pages/transfer_amount_page.dart';
 import 'package:bank/ui/pages/transfer_page.dart';
 import 'package:bank/ui/pages/transfer_success_page.dart';
 import 'package:flutter/material.dart';
@@ -42,15 +42,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: lightBackgroundColor,
+          scaffoldBackgroundColor: warnaHitam,
           appBarTheme: AppBarTheme(
-            backgroundColor: lightBackgroundColor,
+            backgroundColor: warnaHitam,
             elevation: 0,
             centerTitle: true,
             iconTheme: IconThemeData(
-              color: blackColor,
+              color: warnaPutih,
             ),
-            titleTextStyle: blackTextStyle.copyWith(
+            titleTextStyle: whiteTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),

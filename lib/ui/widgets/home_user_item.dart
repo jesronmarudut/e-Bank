@@ -21,7 +21,7 @@ class HomeUserItem extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: whiteColor,
+        color: warnaGrey,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +42,7 @@ class HomeUserItem extends StatelessWidget {
           ),
           Text(
             '@$username',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 12,
               fontWeight: medium,
             ),

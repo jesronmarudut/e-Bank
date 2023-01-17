@@ -27,15 +27,13 @@ class HomeTipsItem extends StatelessWidget {
         height: 176,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: whiteColor,
+          color: warnaGrey,
         ),
         child: Column(
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(
-                  20,
-                ),
+                top: Radius.circular(20),
               ),
               child: Image.asset(
                 imageUrl,
@@ -53,7 +51,7 @@ class HomeTipsItem extends StatelessWidget {
               ),
               child: Text(
                 title,
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontWeight: medium,
                   overflow: TextOverflow.ellipsis,
                 ),

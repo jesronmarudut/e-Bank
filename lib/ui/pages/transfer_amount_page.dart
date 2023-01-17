@@ -56,7 +56,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkBackgroundColor,
+      backgroundColor: warnaHitam,
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 58,
@@ -83,14 +83,14 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                 decoration: InputDecoration(
                   prefixIcon: Text(
                     'Rp ',
-                    style: whiteTextStyle.copyWith(
+                    style: greenTextStyle.copyWith(
                       fontSize: 36,
                       fontWeight: medium,
                     ),
                   ),
                   disabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: greyColor,
+                      color: warnaGrey2,
                     ),
                   ),
                 ),
@@ -172,7 +172,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: numberBackgroundColor,
+                    color: warnaMerah2,
                   ),
                   child: Center(
                     child: Icon(

@@ -22,17 +22,17 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: whiteColor,
+          backgroundColor: warnaHitam,
           elevation: 0,
-          selectedItemColor: blueColor,
-          unselectedItemColor: blackColor,
+          selectedItemColor: warnaPutih,
+          unselectedItemColor: whiteColor,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           selectedLabelStyle: blueTextStyle.copyWith(
             fontSize: 10,
             fontWeight: medium,
           ),
-          unselectedLabelStyle: blackTextStyle.copyWith(
+          unselectedLabelStyle: whiteTextStyle.copyWith(
             fontSize: 10,
             fontWeight: medium,
           ),
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
               icon: Image.asset(
                 'assets/ic_overview.png',
                 width: 20,
-                color: blueColor,
+                color: warnaPutih,
               ),
               label: 'Overview',
             ),
@@ -49,6 +49,7 @@ class HomePage extends StatelessWidget {
               icon: Image.asset(
                 'assets/ic_history.png',
                 width: 20,
+                color: warnaPutih,
               ),
               label: 'History',
             ),
@@ -56,6 +57,7 @@ class HomePage extends StatelessWidget {
               icon: Image.asset(
                 'assets/ic_statistic.png',
                 width: 20,
+                color: warnaPutih,
               ),
               label: 'Statistic',
             ),
@@ -63,6 +65,7 @@ class HomePage extends StatelessWidget {
               icon: Image.asset(
                 'assets/ic_reward.png',
                 width: 20,
+                color: warnaPutih,
               ),
               label: 'Reward',
             ),
@@ -71,7 +74,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: purpleColor,
+        backgroundColor: warnaBiru,
         child: Image.asset(
           'assets/ic_plus_circle.png',
           width: 24,
@@ -106,12 +109,12 @@ class HomePage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Howdy', style: greyTextStyle.copyWith(fontSize: 16)),
+              Text('Howdy', style: whiteTextStyle.copyWith(fontSize: 16)),
               const SizedBox(height: 2),
               Text(
                 'Shaynahan',
                 style:
-                    blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
+                    whiteTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
               )
             ],
           ),
@@ -212,7 +215,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: whiteColor,
+        color: warnaGrey,
       ),
       child: Column(
         children: [
@@ -220,29 +223,29 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 'Level 1',
-                style: blackTextStyle.copyWith(
-                  fontWeight: medium,
+                style: whiteTextStyle.copyWith(
+                  fontWeight: semiBold,
                 ),
               ),
               const Spacer(),
               Text(
-                '55% ',
+                '35% ',
                 style: greenTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
               ),
               Text(formatCurrency(20000),
-                  style: blackTextStyle.copyWith(fontWeight: semiBold))
+                  style: whiteTextStyle.copyWith(fontWeight: semiBold))
             ],
           ),
           const SizedBox(height: 10),
           ClipRRect(
             borderRadius: BorderRadius.circular(55),
             child: LinearProgressIndicator(
-              value: 0.55,
+              value: 0.35,
               minHeight: 5,
               valueColor: AlwaysStoppedAnimation(greenColor),
-              backgroundColor: lightBackgroundColor,
+              backgroundColor: warnaPutih,
             ),
           ),
         ],
@@ -258,7 +261,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Do Something',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -313,7 +316,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Latest Transaction',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -323,7 +326,7 @@ class HomePage extends StatelessWidget {
             margin: const EdgeInsets.only(top: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: whiteColor,
+              color: warnaGrey,
             ),
             child: Column(
               children: [
@@ -367,7 +370,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Send Again',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -411,7 +414,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Friendly Tips',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -430,7 +433,7 @@ class HomePage extends StatelessWidget {
               ),
               HomeTipsItem(
                 imageUrl: 'assets/img_tips2.png',
-                title: ' Spot the good pie of finance model',
+                title: 'Spot the good pie of finance model',
                 url: 'https://www.google.com',
               ),
               HomeTipsItem(
@@ -465,8 +468,8 @@ class MoreDialog extends StatelessWidget {
         padding: const EdgeInsets.all(30),
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40),
-          color: lightBackgroundColor,
+          borderRadius: BorderRadius.circular(20),
+          color: warnaGrey2,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -474,7 +477,7 @@ class MoreDialog extends StatelessWidget {
             Text(
               'Do More With Us',
               style:
-                  blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+                  whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
             ),
             const SizedBox(
               height: 13,

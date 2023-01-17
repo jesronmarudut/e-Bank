@@ -12,11 +12,24 @@ Color redColor = const Color(0xffFF0032);
 Color greenColor = const Color(0xff22B07D);
 Color numberBackgroundColor = const Color(0xff1A1D2E);
 
-TextStyle blackTextStyle = GoogleFonts.poppins(color: blackColor);
-TextStyle whiteTextStyle = GoogleFonts.poppins(color: whiteColor);
-TextStyle greyTextStyle = GoogleFonts.poppins(color: greyColor);
-TextStyle blueTextStyle = GoogleFonts.poppins(color: blueColor);
+Color warnaBiru = const Color(0xff304FFE);
+Color warnaKuning = const Color(0xffFDD835);
+Color warnaMerah = const Color(0xffD32F2F);
+Color warnaMerah2 = const Color(0xff65241F);
+Color warnaHitam = const Color(0xff141414);
+Color warnaGrey = const Color(0xff2A2A2A);
+Color warnaGrey2 = const Color(0xff414141);
+Color warnaGrey3 = const Color(0xff898989);
+Color warnaPutih = const Color(0xffF7F7F7);
+
+TextStyle blackTextStyle = GoogleFonts.poppins(color: warnaHitam);
+TextStyle whiteTextStyle = GoogleFonts.poppins(color: warnaPutih);
+TextStyle greyTextStyle = GoogleFonts.poppins(color: warnaGrey);
+TextStyle greyTextStyle3 = GoogleFonts.poppins(color: warnaGrey3);
+TextStyle blueTextStyle = GoogleFonts.poppins(color: warnaBiru);
 TextStyle greenTextStyle = GoogleFonts.poppins(color: greenColor);
+TextStyle yellowTextStyle = GoogleFonts.poppins(color: warnaKuning);
+TextStyle redTextStyle = GoogleFonts.poppins(color: warnaMerah);
 
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;

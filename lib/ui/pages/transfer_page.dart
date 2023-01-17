@@ -17,19 +17,20 @@ class TransferPage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
           const SizedBox(
             height: 30,
           ),
           Text(
             'Search',
-            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+            style: whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
           ),
           const SizedBox(height: 16),
-          const CustomFormField(title: 'By Username', isShowTitle: false),
+          const CustomFormField(
+            title: 'By Username',
+            isShowTitle: false,
+          ),
           // buildRecentUsers()
           buildResult(),
           const SizedBox(
@@ -96,7 +97,7 @@ class TransferPage extends StatelessWidget {
         children: [
           Text(
             'Result',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

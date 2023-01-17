@@ -24,7 +24,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
   final pinController = TextEditingController(text: '');
   XFile? selectedImage;
 
-//? UNTUK MELAKUKAN VALIDASI PIN TIDAK KURANG DARI 6
+//? Untuk melakukan validasi jika pin kurang dari 6
   bool validate() {
     if (pinController.text.length != 6) {
       return false;
@@ -42,10 +42,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
           Container(
             width: 155,
             height: 50,
-            margin: const EdgeInsets.only(
-              top: 100,
-              bottom: 100,
-            ),
+            margin: const EdgeInsets.only(top: 100, bottom: 100),
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/img_logo_light.png'),
@@ -54,7 +51,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
           ),
           Text(
             'Join Us to Unlock\nYour Growth',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
@@ -66,7 +63,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: whiteColor,
+              color: warnaGrey,
             ),
             child: Column(
               children: [
@@ -82,7 +79,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                     height: 120,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: lightBackgroundColor,
+                      color: warnaGrey2,
                       image: selectedImage == null
                           ? null
                           : DecorationImage(
@@ -105,7 +102,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                 const SizedBox(height: 16),
                 Text(
                   'Syahna Hanna',
-                  style: blackTextStyle.copyWith(
+                  style: whiteTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
                   ),
@@ -131,7 +128,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                               pin: pinController.text,
                               profilePicture: selectedImage == null
                                   ? null
-                                  : 'data:image/png;base63,' +
+                                  : 'data:image/png;base64,' +
                                       base64Encode(
                                         File(selectedImage!.path)
                                             .readAsBytesSync(),

@@ -13,11 +13,8 @@ class AuthService {
         Uri.parse(
           '$baseUrl/is-email-exist',
         ),
-        body: {
-          'email': email,
-        },
+        body: {'email': email},
       );
-
       if (res.statusCode == 200) {
         return jsonDecode(res.body)['is_email_exist'];
       } else {
@@ -30,7 +27,7 @@ class AuthService {
 
   Future<UserModel> register(SignUpFormModel data) async {
     try {
-      print(data.toJson());
+      // print(data.toJson());
       final res = await http.post(
         Uri.parse('$baseUrl/register'),
         body: data.toJson(),
@@ -40,15 +37,13 @@ class AuthService {
           jsonDecode(res.body),
         );
         user = user.copyWith(password: data.password);
-
         await storeCredentialToLocal(user);
-
         return user;
       } else {
         throw jsonDecode(res.body)['message'];
       }
     } catch (e) {
-      print(e);
+      // print(e);
       rethrow;
     }
   }
@@ -65,9 +60,7 @@ class AuthService {
           jsonDecode(res.body),
         );
         user = user.copyWith(password: data.password);
-
         await storeCredentialToLocal(user);
-
         return user;
       } else {
         throw jsonDecode(res.body)['message'];

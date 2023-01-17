@@ -76,7 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               Text(
                 'Join Us to Unlock\nYour Growth',
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -88,7 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: whiteColor,
+                  color: warnaGrey,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -27,10 +27,10 @@ class TransferResultUserItem extends StatelessWidget {
         vertical: 22,
       ),
       decoration: BoxDecoration(
-        color: whiteColor,
+        color: warnaGrey,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isSelected ? blueColor : whiteColor,
+          color: isSelected ? warnaPutih : warnaGrey,
           width: 2,
         ),
       ),
@@ -71,7 +71,7 @@ class TransferResultUserItem extends StatelessWidget {
           const SizedBox(height: 13),
           Text(
             name,
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: medium,
             ),
@@ -81,7 +81,7 @@ class TransferResultUserItem extends StatelessWidget {
           ),
           Text(
             '@$username',
-            style: greyTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 12,
             ),
           ),

@@ -74,7 +74,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
               ),
               Text(
                 'Verify Your\nAccount',
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -86,7 +86,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: whiteColor,
+                  color: warnaGrey,
                 ),
                 child: Column(
                   children: [
@@ -102,7 +102,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                         height: 120,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: lightBackgroundColor,
+                          color: warnaGrey2,
                           image: selectedImage == null
                               ? null
                               : DecorationImage(
@@ -125,7 +125,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                     const SizedBox(height: 16),
                     Text(
                       'Passport/ID Card',
-                      style: blackTextStyle.copyWith(
+                      style: whiteTextStyle.copyWith(
                         fontSize: 18,
                         fontWeight: medium,
                       ),

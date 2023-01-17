@@ -8,7 +8,7 @@ void showCustomSnackbar(BuildContext context, String message) {
   Flushbar(
     message: message,
     flushbarPosition: FlushbarPosition.TOP,
-    backgroundColor: redColor,
+    backgroundColor: warnaMerah,
     duration: const Duration(seconds: 2),
   ).show(context);
 }

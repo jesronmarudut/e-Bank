@@ -17,13 +17,11 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 100),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 22),
             decoration: BoxDecoration(
-              color: whiteColor,
+              color: warnaGrey2,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -47,21 +45,16 @@ class ProfilePage extends StatelessWidget {
                         color: whiteColor,
                       ),
                       child: Center(
-                        child: Icon(
-                          Icons.check_circle,
-                          color: greenColor,
-                          size: 24,
-                        ),
+                        child: Icon(Icons.check_circle,
+                            color: greenColor, size: 24),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 16,
-                ),
+                SizedBox(height: 16),
                 Text(
                   'Syahna Hanna',
-                  style: blackTextStyle.copyWith(
+                  style: whiteTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
                   ),

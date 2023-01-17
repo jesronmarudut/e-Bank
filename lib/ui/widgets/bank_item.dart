@@ -22,9 +22,9 @@ class BankItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             20,
           ),
-          color: whiteColor,
+          color: warnaGrey,
           border:
-              Border.all(width: 2, color: isSelected ? blueColor : whiteColor)),
+              Border.all(width: 2, color: isSelected ? warnaPutih : warnaGrey)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -34,7 +34,7 @@ class BankItem extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: medium,
                 ),

@@ -10,6 +10,7 @@ class TopupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: warnaBiru,
         title: const Text('Top Up'),
       ),
       body: ListView(
@@ -18,7 +19,7 @@ class TopupPage extends StatelessWidget {
           const SizedBox(height: 30),
           Text(
             'Wallet',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -35,7 +36,7 @@ class TopupPage extends StatelessWidget {
                 children: [
                   Text(
                     '8008 2208 1997',
-                    style: blackTextStyle.copyWith(
+                    style: whiteTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: medium,
                     ),
@@ -45,8 +46,8 @@ class TopupPage extends StatelessWidget {
                   ),
                   Text(
                     'Angga Rizky',
-                    style: greyTextStyle.copyWith(
-                      fontSize: 12,
+                    style: whiteTextStyle.copyWith(
+                      fontSize: 13,
                     ),
                   ),
                 ],
@@ -56,7 +57,7 @@ class TopupPage extends StatelessWidget {
           const SizedBox(height: 40),
           Text(
             'Select Bank',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

@@ -18,7 +18,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   List<String> titles = [
     'Grow Your\nFinancial Today',
     'Build From\nZero to Freedom',
-    'Start Together'
+    'Start Together',
   ];
 
   List<String> subtitles = [
@@ -74,20 +74,20 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   vertical: 24,
                 ),
                 decoration: BoxDecoration(
-                  color: whiteColor,
+                  color: warnaGrey,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   children: [
                     Text(titles[currentIndex],
-                        style: blackTextStyle.copyWith(
+                        style: whiteTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: semiBold,
                         ),
                         textAlign: TextAlign.center),
                     const SizedBox(height: 26),
                     Text(subtitles[currentIndex],
-                        style: greyTextStyle.copyWith(
+                        style: whiteTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         textAlign: TextAlign.center),
@@ -123,8 +123,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 0
-                                        ? blueColor
-                                        : lightBackgroundColor),
+                                        ? warnaBiru
+                                        : warnaPutih),
                               ),
                               Container(
                                 width: 12,
@@ -133,8 +133,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 1
-                                        ? blueColor
-                                        : lightBackgroundColor),
+                                        ? warnaBiru
+                                        : warnaPutih),
                               ),
                               Container(
                                 width: 12,
@@ -143,8 +143,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 2
-                                        ? blueColor
-                                        : lightBackgroundColor),
+                                        ? warnaBiru
+                                        : warnaPutih),
                               ),
                               const Spacer(),
                               CustomFilledButton(
