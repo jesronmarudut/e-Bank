@@ -20,7 +20,7 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
   final emailController = TextEditingController(text: '');
   final passwordController = TextEditingController(text: '');
 
-  bool _isObscure = true;
+  // bool _isObscure = true;
 
   @override
   void initState() {
@@ -89,8 +89,6 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                         title: 'Password',
                         controller: passwordController,
                         obscureText: true),
-                    //? Hide/Seek password
-
                     const SizedBox(height: 30),
                     CustomFilledButton(
                       title: 'Update',

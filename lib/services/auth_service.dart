@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:bank/models/sign_up_form_model.dart';
 import 'package:bank/models/sign_in_form_model.dart';
 import 'package:bank/models/sign_up_form_model.dart';
+import 'package:bank/models/user_edit_form_model.dart';
 // import 'package:bank/models/user_edit_form_model.dart';
 import 'package:bank/models/user_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -65,9 +66,7 @@ class AuthService {
         ),
         body: data.toJson(),
       );
-
       print(res.body);
-
       if (res.statusCode == 200 || res.statusCode == 201) {
         final user = UserModel.fromJson(jsonDecode(res.body));
         user.password = data.password;
@@ -84,32 +83,48 @@ class AuthService {
     }
   }
 
-  // Future<void> updateUser(UserEditFormModel data) async {
-  //   try {
-  //     print(data.toJson());
+  Future<void> logout() async {
+    try {
+      final token = await getToken();
+      final res = await http.post(
+          Uri.parse(
+            '$baseUrl/logout',
+          ),
+          headers: {
+            'Authorization': token,
+          });
+      if (res.statusCode == 200) {
+        await clearLocalStorage();
+      } else {
+        throw jsonDecode(res.body)['message'];
+      }
+    } catch (e) {}
+  }
 
-  //     final token = await getToken();
+  Future<void> updateUser(UserEditFormModel data) async {
+    try {
+      print(data.toJson());
+      final token = await getToken();
+      final res = await http.put(
+        Uri.parse(
+          '$baseUrl/users',
+        ),
+        body: data.toJson(),
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
 
-  //     final res = await http.put(
-  //       Uri.parse(
-  //         '$baseUrl/users',
-  //       ),
-  //       body: data.toJson(),
-  //       headers: {
-  //         'Authorization': 'Bearer $token',
-  //       },
-  //     );
+      print(res.body);
 
-  //     print(res.body);
-
-  //     if (res.statusCode != 200) {
-  //       throw jsonDecode(res.body)['message'];
-  //     }
-  //   } catch (e) {
-  //     print(e);
-  //     rethrow;
-  //   }
-  // }
+      if (res.statusCode != 200) {
+        throw jsonDecode(res.body)['message'];
+      }
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
+  }
 
   Future<void> storeCredentialToLocal(UserModel user) async {
     try {
@@ -139,15 +154,12 @@ class AuthService {
     try {
       const storage = FlutterSecureStorage();
       Map<String, String> values = await storage.readAll();
-
       if (values['token'] != null) {
         final SignInFormModel data = SignInFormModel(
           email: values['email'],
           password: values['password'],
         );
-
         print('get user from local: ${data.toJson()}');
-
         return data;
       } else {
         throw 'unauthenticated';

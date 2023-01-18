@@ -17,24 +17,25 @@ class UserModel {
   int? tokenExpiresIn;
   String? tokenType;
 
-  UserModel(
-      {this.id,
-      this.name,
-      this.email,
-      this.username,
-      this.password,
-      this.emailVerifiedAt,
-      this.verified,
-      this.profilePicture,
-      this.ktp,
-      this.createdAt,
-      this.updatedAt,
-      this.balance,
-      this.cardNumber,
-      this.pin,
-      this.token,
-      this.tokenExpiresIn,
-      this.tokenType});
+  UserModel({
+    this.id,
+    this.name,
+    this.email,
+    this.username,
+    this.password,
+    this.emailVerifiedAt,
+    this.verified,
+    this.profilePicture,
+    this.ktp,
+    this.createdAt,
+    this.updatedAt,
+    this.balance,
+    this.cardNumber,
+    this.pin,
+    this.token,
+    this.tokenExpiresIn,
+    this.tokenType,
+  });
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

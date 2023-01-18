@@ -73,7 +73,7 @@ class _PinPageState extends State<PinPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'PIN',
+                'Your PIN',
                 style: whiteTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
