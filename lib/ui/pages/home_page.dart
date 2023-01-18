@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           backgroundColor: warnaHitam,
           elevation: 0,
-          selectedItemColor: warnaPutih,
+          selectedItemColor: warnaKuning,
           unselectedItemColor: whiteColor,
           showSelectedLabels: true,
           showUnselectedLabels: true,
@@ -46,11 +46,8 @@ class HomePage extends StatelessWidget {
               label: 'Overview',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_history.png',
-                width: 20,
-                color: warnaPutih,
-              ),
+              icon: Image.asset('assets/ic_history.png',
+                  width: 20, color: warnaPutih),
               label: 'History',
             ),
             BottomNavigationBarItem(
@@ -390,15 +387,15 @@ class HomePage extends StatelessWidget {
                 ),
                 HomeUserItem(
                   imageUrl: 'assets/img_friend2.png',
-                  username: 'Sakura',
+                  username: 'Steffani',
                 ),
                 HomeUserItem(
                   imageUrl: 'assets/img_friend3.png',
-                  username: 'Saripuddin',
+                  username: 'Michael',
                 ),
                 HomeUserItem(
                   imageUrl: 'assets/img_friend4.png',
-                  username: 'Yoshi',
+                  username: 'David',
                 ),
               ],
             ),

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:bank/models/sign_in_form_model.dart';
-import 'package:bank/models/signup_form_model.dart';
+import 'package:bank/models/sign_up_form_model.dart';
 import 'package:bank/models/user_model.dart';
 import 'package:bank/services/auth_service.dart';
 import 'package:bloc/bloc.dart';

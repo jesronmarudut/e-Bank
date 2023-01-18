@@ -1,7 +1,9 @@
+import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PinPage extends StatefulWidget {
   const PinPage({Key? key});
@@ -12,22 +14,26 @@ class PinPage extends StatefulWidget {
 
 class _PinPageState extends State<PinPage> {
   final TextEditingController pinController = TextEditingController(text: '');
+  String pin = '';
+  bool isError = false;
 
   addPin(String number) {
-    //  Fungsi untuk ketika button angka di klik akan bertambah string
+    //?  Fungsi untuk ketika button angka di klik akan bertambah string
     if (pinController.text.length < 6) {
       setState(() {
         pinController.text = pinController.text + number;
       });
     }
     // print(pinController.text);
-    // Untuk membuat
 
-    ///Snackbar akan tmpil error jika jumlah text yg di input 6 dan salah
+    //?Snackbar akan tmpil error jika jumlah text yg di input 6 dan salah
     if (pinController.text.length == 6) {
-      if (pinController.text == '123123') {
+      if (pinController.text == pin) {
         Navigator.pop(context, true);
       } else {
+        setState(() {
+          isError = true;
+        });
         showCustomSnackbar(
           context,
           'PIN yang anda masukkan salah!',
@@ -39,11 +45,21 @@ class _PinPageState extends State<PinPage> {
   deletePin() {
     if (pinController.text.isNotEmpty) {
       setState(() {
+        isError = false;
         pinController.text =
             pinController.text.substring(0, pinController.text.length - 1);
       });
     }
     print(pinController.text);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final authState = context.read<AuthBloc>().state;
+    if (authState is AuthSuccess) {
+      pin = authState.user.pin!;
+    }
   }
 
   @override
@@ -75,10 +91,10 @@ class _PinPageState extends State<PinPage> {
                   cursorColor: greyColor,
                   obscuringCharacter: '*',
                   style: greenTextStyle.copyWith(
-                    fontSize: 36,
-                    fontWeight: medium,
-                    letterSpacing: 16,
-                  ),
+                      fontSize: 36,
+                      fontWeight: medium,
+                      letterSpacing: 16,
+                      color: isError ? warnaMerah : whiteColor),
                   decoration: InputDecoration(
                     disabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(

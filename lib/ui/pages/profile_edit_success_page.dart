@@ -14,7 +14,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
         children: [
           Text(
             'Nice Update!',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),

@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:bank/blocs/auth/auth_bloc.dart';
-import 'package:bank/models/signup_form_model.dart';
-import 'package:bank/shared/shared_methods.dart';
+import 'package:bank/shared/theme.dart';
+import 'package:bank/ui/widgets/buttons.dart';
+import 'package:bank/blocs/auth/auth_bloc.dart';
+import 'package:bank/models/sign_up_form_model.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:bank/ui/widgets/forms.dart';
@@ -13,10 +14,11 @@ import 'package:image_picker/image_picker.dart';
 
 class SignUpSetKtpPage extends StatefulWidget {
   final SignUpFormModel data;
+
   const SignUpSetKtpPage({
     Key? key,
     required this.data,
-  });
+  }) : super(key: key);
 
   @override
   State<SignUpSetKtpPage> createState() => _SignUpSetKtpPageState();
@@ -25,39 +27,40 @@ class SignUpSetKtpPage extends StatefulWidget {
 class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
   XFile? selectedImage;
 
-  bool validate() {
-    if (selectedImage == null) {
-      return false;
+  selectImage() async {
+    final imagePicker = ImagePicker();
+    final XFile? image =
+        await imagePicker.pickImage(source: ImageSource.gallery);
+
+    if (image != null) {
+      setState(() {
+        selectedImage = image;
+      });
     }
-    return true;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocConsumer<AuthBloc, AuthState>(
-        listener: (context, state) {
-          if (state is AuthFailed) {
-            showCustomSnackbar(context, state.e);
-          }
-          if (state is AuthSuccess) {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              '/home',
-              (route) => false,
-            );
-          }
-        },
-        builder: (context, state) {
-          // ? Menambah Loading
-          if (state is AuthLoading) {
-            return const Center(
+    return BlocConsumer<AuthBloc, AuthState>(
+      listener: (context, state) {
+        if (state is AuthSuccess) {
+          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+        }
+      },
+      builder: (context, state) {
+        if (state is AuthLoading) {
+          return const Scaffold(
+            body: Center(
               child: CircularProgressIndicator(),
-            );
-          }
+            ),
+          );
+        }
 
-          return ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+        return Scaffold(
+          body: ListView(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+            ),
             children: [
               Container(
                 width: 155,
@@ -68,7 +71,9 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                 ),
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/img_logo_light.png'),
+                    image: AssetImage(
+                      'assets/img_logo_light.png',
+                    ),
                   ),
                 ),
               ),
@@ -86,29 +91,28 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: warnaGrey,
+                  color: whiteColor,
                 ),
                 child: Column(
                   children: [
                     GestureDetector(
-                      onTap: () async {
-                        final image = await selectImage();
-                        setState(() {
-                          selectedImage = image;
-                        });
+                      onTap: () {
+                        selectImage();
                       },
                       child: Container(
                         width: 120,
                         height: 120,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: warnaGrey2,
+                          color: lightBackgroundColor,
                           image: selectedImage == null
                               ? null
                               : DecorationImage(
                                   fit: BoxFit.cover,
                                   image: FileImage(
-                                    File(selectedImage!.path),
+                                    File(
+                                      selectedImage!.path,
+                                    ),
                                   ),
                                 ),
                         ),
@@ -122,56 +126,60 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                               ),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(
+                      height: 16,
+                    ),
                     Text(
                       'Passport/ID Card',
-                      style: whiteTextStyle.copyWith(
+                      style: blackTextStyle.copyWith(
                         fontSize: 18,
                         fontWeight: medium,
                       ),
                     ),
-                    const SizedBox(height: 50),
+                    const SizedBox(
+                      height: 50,
+                    ),
                     CustomFilledButton(
                       title: 'Continue',
                       onPressed: () {
-                        if (validate()) {
+                        if (selectedImage == null) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: const Text(
+                                'Gambar tidak boleh kosong',
+                              ),
+                              backgroundColor: redColor,
+                            ),
+                          );
+                        } else {
                           context.read<AuthBloc>().add(
                                 AuthRegister(
                                   widget.data.copyWith(
-                                    ktp: selectedImage == null
-                                        ? null
-                                        : 'data:image/png;base64,' +
-                                            base64Encode(
-                                              File(selectedImage!.path)
-                                                  .readAsBytesSync(),
-                                            ),
+                                    ktp: 'data:image/png;base64,' +
+                                        base64Encode(File(selectedImage!.path)
+                                            .readAsBytesSync()),
                                   ),
                                 ),
                               );
-                        } else {
-                          showCustomSnackbar(
-                            context,
-                            'Gambar tidak boleh kosong',
-                          );
                         }
                       },
-                    )
+                    ),
                   ],
                 ),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(
+                height: 60,
+              ),
               CustomTextButton(
-                title: 'Skip For Now',
+                title: 'Skip for Now',
                 onPressed: () {
-                  context.read<AuthBloc>().add(
-                        AuthRegister(widget.data),
-                      );
+                  context.read<AuthBloc>().add(AuthRegister(widget.data));
                 },
-              )
+              ),
             ],
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

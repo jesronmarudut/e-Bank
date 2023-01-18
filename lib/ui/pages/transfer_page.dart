@@ -60,7 +60,7 @@ class TransferPage extends StatelessWidget {
         children: [
           Text(
             'Recent Users',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

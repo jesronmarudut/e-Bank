@@ -43,7 +43,7 @@ class TransferRecentUserItem extends StatelessWidget {
                 Text(
                   name,
                   style:
-                      blackTextStyle.copyWith(fontSize: 16, fontWeight: medium),
+                      whiteTextStyle.copyWith(fontSize: 16, fontWeight: medium),
                 ),
                 const SizedBox(height: 2),
                 Text(

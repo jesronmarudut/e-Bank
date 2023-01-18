@@ -23,14 +23,14 @@ class CustomFilledButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          backgroundColor: warnaBiru,
+          backgroundColor: warnaKuning,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           ),
         ),
         child: Text(
           title,
-          style: whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
         ),
       ),
     );

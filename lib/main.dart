@@ -1,4 +1,5 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
+import 'package:bank/models/sign_up_form_model.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/pages/data_package_page.dart';
 import 'package:bank/ui/pages/data_provider_page.dart';
@@ -77,6 +78,7 @@ class MyApp extends StatelessWidget {
           '/data-provider': (context) => const DataProviderPage(),
           '/data-package': (context) => const DataPackagePage(),
           '/data-success': (context) => const DataSuccessPage(),
+          '/reward': (context) => const DataSuccessPage(),
         },
       ),
     );

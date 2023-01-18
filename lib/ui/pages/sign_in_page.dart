@@ -56,7 +56,7 @@ class _SignInPageState extends State<SignInPage> {
                           image: AssetImage('assets/img_logo_light.png')))),
               Text(
                 'Sign In &\nGrow Your Finance',
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -87,7 +87,7 @@ class _SignInPageState extends State<SignInPage> {
                     const SizedBox(height: 8),
                     Align(
                       alignment: Alignment.centerRight,
-                      child: Text('Forgot Password', style: blueTextStyle),
+                      child: Text('Forgot Password', style: greyTextStyle3),
                     ),
                     const SizedBox(height: 30),
                     CustomFilledButton(

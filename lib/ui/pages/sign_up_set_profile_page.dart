@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:bank/models/signup_form_model.dart';
+import 'package:bank/models/sign_up_form_model.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/pages/sign_up_set_ktp_page.dart';
@@ -11,7 +11,7 @@ import 'package:image_picker/image_picker.dart';
 
 class SignUpSetProfilePage extends StatefulWidget {
   final SignUpFormModel data;
-  const SignUpSetProfilePage({
+  SignUpSetProfilePage({
     Key? key,
     required this.data,
   });
