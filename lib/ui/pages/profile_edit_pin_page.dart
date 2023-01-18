@@ -15,12 +15,12 @@ class ProfileEditPinPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
-          const SizedBox(height: 30),
+          const SizedBox(height: 150),
           Container(
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: whiteColor,
+              color: warnaGrey,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

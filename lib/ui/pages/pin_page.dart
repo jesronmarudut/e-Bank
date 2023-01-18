@@ -89,9 +89,9 @@ class _PinPageState extends State<PinPage> {
                   enabled: false,
                   obscureText: true,
                   cursorColor: greyColor,
-                  obscuringCharacter: '*',
+                  obscuringCharacter: '•',
                   style: greenTextStyle.copyWith(
-                      fontSize: 36,
+                      fontSize: 50,
                       fontWeight: medium,
                       letterSpacing: 16,
                       color: isError ? warnaMerah : whiteColor),

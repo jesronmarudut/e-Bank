@@ -13,8 +13,8 @@ class ProfileEditSuccessPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Nice Update!',
-            style: whiteTextStyle.copyWith(
+            'Profile successfully updated.',
+            style: yellowTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
@@ -25,7 +25,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
           ),
           Text(
             'Your data is safe with\n our system',
-            style: greyTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,
@@ -33,7 +33,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
           const SizedBox(height: 50),
           CustomFilledButton(
             width: 183,
-            title: 'My Profile',
+            title: 'Back to Home',
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
                   context, '/home', (route) => false);
