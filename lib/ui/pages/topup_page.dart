@@ -38,7 +38,9 @@ class TopupPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '8008 2208 1997',
+                        //? replace All Mapped untuk memberikan spasi
+                        state.user.cardNumber!.replaceAllMapped(
+                            RegExp(r".{4}"), (match) => "${match.group(0)}  "),
                         style: whiteTextStyle.copyWith(
                           fontSize: 16,
                           fontWeight: medium,

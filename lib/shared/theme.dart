@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Color whiteColor = const Color(0xffFFFFFF);
-Color blackColor = const Color(0xff14193F);
-Color greyColor = const Color(0xffA4A8AE);
-Color lightBackgroundColor = const Color(0xffE4E5E6);
-Color darkBackgroundColor = const Color(0xff020518);
-Color blueColor = const Color(0xff53C1F9);
-Color purpleColor = const Color(0xff5142E6);
-Color redColor = const Color(0xffFF0032);
-Color greenColor = const Color(0xff22B07D);
-Color numberBackgroundColor = const Color(0xff1A1D2E);
+// Color whiteColor = const Color(0xffFFFFFF);
+// Color blackColor = const Color(0xff14193F);
+// Color greyColor = const Color(0xffA4A8AE);
+// Color lightBackgroundColor = const Color(0xffE4E5E6);
+// Color darkBackgroundColor = const Color(0xff020518);
+// Color blueColor = const Color(0xff53C1F9);
+// Color purpleColor = const Color(0xff5142E6);
+// Color redColor = const Color(0xffFF0032);
+// Color greenColor = const Color(0xff22B07D);
+// Color numberBackgroundColor = const Color(0xff1A1D2E);
 
+Color warnaHijau = const Color(0xff22B07D);
 Color warnaBiru = const Color(0xff304FFE);
 Color warnaKuning = const Color(0xffFDD835);
 Color warnaMerah = const Color(0xffD32F2F);
@@ -28,7 +29,7 @@ TextStyle greyTextStyle = GoogleFonts.poppins(color: warnaGrey);
 TextStyle greyTextStyle2 = GoogleFonts.poppins(color: warnaGrey2);
 TextStyle greyTextStyle3 = GoogleFonts.poppins(color: warnaGrey3);
 TextStyle blueTextStyle = GoogleFonts.poppins(color: warnaBiru);
-TextStyle greenTextStyle = GoogleFonts.poppins(color: greenColor);
+TextStyle greenTextStyle = GoogleFonts.poppins(color: warnaHijau);
 TextStyle yellowTextStyle = GoogleFonts.poppins(color: warnaKuning);
 TextStyle redTextStyle = GoogleFonts.poppins(color: warnaMerah);
 

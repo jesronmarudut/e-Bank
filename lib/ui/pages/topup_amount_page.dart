@@ -77,7 +77,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
               child: TextFormField(
                 controller: amountController,
                 enabled: false,
-                cursorColor: greyColor,
+                cursorColor: warnaGrey,
                 style:
                     whiteTextStyle.copyWith(fontSize: 36, fontWeight: medium),
                 decoration: InputDecoration(
@@ -177,7 +177,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                   child: Center(
                     child: Icon(
                       Icons.arrow_back,
-                      color: whiteColor,
+                      color: warnaPutih,
                     ),
                   ),
                 ),

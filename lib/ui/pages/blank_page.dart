@@ -2,8 +2,8 @@ import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
-class RewardPage extends StatelessWidget {
-  const RewardPage({Key? key});
+class BlankPage extends StatelessWidget {
+  const BlankPage({Key? key});
 
   @override
   Widget build(BuildContext context) {

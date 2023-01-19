@@ -28,7 +28,6 @@ class _SignUpPageState extends State<SignUpPage> {
         passwordController.text.isEmpty) {
       return false;
     }
-
     return true;
   }
 
@@ -124,7 +123,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           content: Text(
                             state.e,
                           ),
-                          backgroundColor: redColor,
+                          backgroundColor: warnaMerah2,
                         ),
                       );
                     }
@@ -149,7 +148,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               content: const Text(
                                 'Semua field harus diisi',
                               ),
-                              backgroundColor: redColor,
+                              backgroundColor: warnaMerah2,
                             ),
                           );
                         }

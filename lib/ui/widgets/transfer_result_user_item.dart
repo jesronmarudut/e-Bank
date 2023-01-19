@@ -55,12 +55,12 @@ class TransferResultUserItem extends StatelessWidget {
                       height: 16,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: whiteColor,
+                        color: warnaPutih,
                       ),
                       child: Center(
                         child: Icon(
                           Icons.check_circle,
-                          color: greenColor,
+                          color: warnaHijau,
                           size: 14,
                         ),
                       ),

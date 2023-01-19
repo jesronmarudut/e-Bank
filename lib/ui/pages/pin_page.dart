@@ -88,17 +88,17 @@ class _PinPageState extends State<PinPage> {
                   controller: pinController,
                   enabled: false,
                   obscureText: true,
-                  cursorColor: greyColor,
+                  cursorColor: warnaGrey,
                   obscuringCharacter: '•',
                   style: greenTextStyle.copyWith(
                       fontSize: 50,
                       fontWeight: medium,
                       letterSpacing: 16,
-                      color: isError ? warnaMerah : whiteColor),
+                      color: isError ? warnaMerah : warnaPutih),
                   decoration: InputDecoration(
                     disabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: greyColor,
+                        color: warnaGrey,
                       ),
                     ),
                   ),
@@ -187,7 +187,7 @@ class _PinPageState extends State<PinPage> {
                       child: Center(
                         child: Icon(
                           Icons.arrow_back,
-                          color: whiteColor,
+                          color: warnaPutih,
                         ),
                       ),
                     ),

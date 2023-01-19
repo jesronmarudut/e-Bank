@@ -16,8 +16,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       bottomNavigationBar: BottomAppBar(
-        color: whiteColor,
+        color: warnaPutih,
         shape: const CircularNotchedRectangle(),
         clipBehavior: Clip.antiAlias,
         notchMargin: 6,
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: warnaHitam,
           elevation: 0,
           selectedItemColor: warnaKuning,
-          unselectedItemColor: whiteColor,
+          unselectedItemColor: warnaPutih,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           selectedLabelStyle: blueTextStyle.copyWith(
@@ -146,12 +147,12 @@ class HomePage extends StatelessWidget {
                               height: 16,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: whiteColor,
+                                color: warnaPutih,
                               ),
                               child: Center(
                                 child: Icon(
                                   Icons.check_circle,
-                                  color: greenColor,
+                                  color: warnaHijau,
                                   size: 14,
                                 ),
                               ),
@@ -244,7 +245,7 @@ class HomePage extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Level 1',
+                'Level 3',
                 style: whiteTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
@@ -252,7 +253,7 @@ class HomePage extends StatelessWidget {
               const Spacer(),
               Text(
                 '35% ',
-                style: greenTextStyle.copyWith(
+                style: yellowTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
               ),
@@ -266,8 +267,8 @@ class HomePage extends StatelessWidget {
             child: LinearProgressIndicator(
               value: 0.35,
               minHeight: 5,
-              valueColor: AlwaysStoppedAnimation(greenColor),
-              backgroundColor: warnaPutih,
+              valueColor: AlwaysStoppedAnimation(warnaKuning),
+              backgroundColor: warnaGrey3,
             ),
           ),
         ],

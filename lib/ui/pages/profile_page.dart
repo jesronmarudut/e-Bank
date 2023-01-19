@@ -74,11 +74,11 @@ class ProfilePage extends StatelessWidget {
                                   height: 28,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: whiteColor,
+                                    color: warnaPutih,
                                   ),
                                   child: Center(
                                     child: Icon(Icons.check_circle,
-                                        color: greenColor, size: 24),
+                                        color: warnaHijau, size: 24),
                                   ),
                                 ),
                               )

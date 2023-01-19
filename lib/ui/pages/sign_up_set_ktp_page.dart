@@ -148,7 +148,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                               content: const Text(
                                 'Gambar tidak boleh kosong',
                               ),
-                              backgroundColor: redColor,
+                              backgroundColor: warnaMerah2,
                             ),
                           );
                         } else {
