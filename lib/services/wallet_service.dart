@@ -16,7 +16,7 @@ class WalletService {
           'new_pin': newPin,
         },
         headers: {
-          'Authorization': token,
+          'Authorization': 'Bearer $token',
         },
       );
 
