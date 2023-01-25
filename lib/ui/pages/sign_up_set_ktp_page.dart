@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/buttons.dart';
-import 'package:bank/blocs/auth/auth_bloc.dart';
+// import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/models/sign_up_form_model.dart';
-import 'package:bank/shared/theme.dart';
-import 'package:bank/ui/widgets/buttons.dart';
-import 'package:bank/ui/widgets/forms.dart';
+// import 'package:bank/shared/theme.dart';
+// import 'package:bank/ui/widgets/buttons.dart';
+// import 'package:bank/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -84,9 +84,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                   fontWeight: semiBold,
                 ),
               ),
-              const SizedBox(
-                height: 30,
-              ),
+              const SizedBox(height: 30),
               Container(
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(

@@ -16,7 +16,6 @@ class PaymentMethodFailed extends PaymentMethodState {
   const PaymentMethodFailed(this.e);
 
   @override
-  // TODO: implement props
   List<Object> get props => [e];
 }
 
@@ -25,6 +24,5 @@ class PaymentMethodSuccess extends PaymentMethodState {
   const PaymentMethodSuccess(this.paymentMethods);
 
   @override
-  // TODO: implement props
   List<Object> get props => [paymentMethods];
 }

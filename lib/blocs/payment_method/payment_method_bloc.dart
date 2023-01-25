@@ -9,7 +9,7 @@ part 'payment_method_state.dart';
 class PaymentMethodBloc extends Bloc<PaymentMethodEvent, PaymentMethodState> {
   PaymentMethodBloc() : super(PaymentMethodInitial()) {
     on<PaymentMethodEvent>((event, emit) async {
-      if (event is PaymenMethodGet) {
+      if (event is PaymentMethodGet) {
         try {
           emit(PaymentMethodLoading());
           final paymentMethods =

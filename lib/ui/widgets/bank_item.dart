@@ -1,15 +1,15 @@
+// import 'package:bank/blocs/payment_method/payment_method_bloc.dart';
+import 'package:bank/models/payment_method_model.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class BankItem extends StatelessWidget {
-  final String title;
-  final String imageUrl;
+  final PaymentMethodModel paymentMethod;
   final bool isSelected;
 
   const BankItem({
     Key? key,
-    required this.title,
-    required this.imageUrl,
+    required this.paymentMethod,
     this.isSelected = false,
   });
 
@@ -28,12 +28,12 @@ class BankItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(imageUrl, height: 30),
+          Image.network(paymentMethod.thumbnail.toString(), height: 30),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                title,
+                paymentMethod.name.toString(),
                 style: whiteTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: medium,

@@ -1,14 +1,22 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
+import 'package:bank/blocs/payment_method/payment_method_bloc.dart';
+import 'package:bank/models/payment_method_model.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/bank_item.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+// import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TopupPage extends StatelessWidget {
+class TopupPage extends StatefulWidget {
   const TopupPage({Key? key});
 
+  @override
+  State<TopupPage> createState() => _TopupPageState();
+}
+
+class _TopupPageState extends State<TopupPage> {
+  PaymentMethodModel? selectedPaymentMethod;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +46,7 @@ class TopupPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        //? replace All Mapped untuk memberikan spasi
+                        //? replaceAllMapped untuk memberikan spasi
                         state.user.cardNumber!.replaceAllMapped(
                             RegExp(r".{4}"), (match) => "${match.group(0)}  "),
                         style: whiteTextStyle.copyWith(
@@ -46,14 +54,10 @@ class TopupPage extends StatelessWidget {
                           fontWeight: medium,
                         ),
                       ),
-                      const SizedBox(
-                        height: 2,
-                      ),
+                      const SizedBox(height: 2),
                       Text(
                         state.user.name.toString(),
-                        style: whiteTextStyle.copyWith(
-                          fontSize: 13,
-                        ),
+                        style: whiteTextStyle.copyWith(fontSize: 13),
                       ),
                     ],
                   )
@@ -68,29 +72,44 @@ class TopupPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 14),
-              const BankItem(
-                title: 'BANK BCA',
-                imageUrl: 'assets/img_bank_bca.png',
-              ),
-              const BankItem(
-                title: 'BANK BNI',
-                imageUrl: 'assets/img_bank_bni.png',
-              ),
-              const BankItem(
-                title: 'BANK MANDIRI',
-                imageUrl: 'assets/img_bank_mandiri.png',
-              ),
-              const BankItem(
-                title: 'BANK OCBC',
-                imageUrl: 'assets/img_bank_ocbc.png',
+              BlocProvider(
+                create: (context) =>
+                    PaymentMethodBloc()..add(PaymentMethodGet()),
+                child: BlocBuilder<PaymentMethodBloc, PaymentMethodState>(
+                  builder: (context, state) {
+                    if (state is PaymentMethodSuccess) {
+                      return Column(
+                        children: state.paymentMethods.map((paymentMethod) {
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedPaymentMethod = paymentMethod;
+                              });
+                            },
+                            child: BankItem(
+                              paymentMethod: paymentMethod,
+                              isSelected:
+                                  paymentMethod.id == selectedPaymentMethod?.id,
+                            ),
+                          );
+                        }).toList(),
+                      );
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                ),
               ),
               const SizedBox(height: 12),
-              CustomFilledButton(
-                title: 'Continue',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/topup-amount');
-                },
-              ),
+              //? button tidak muncul jika belum di pilih
+              if (selectedPaymentMethod != null)
+                CustomFilledButton(
+                  title: 'Continue',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/topup-amount');
+                  },
+                ),
               const SizedBox(height: 57),
             ],
           );

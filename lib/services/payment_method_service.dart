@@ -1,11 +1,10 @@
 import 'dart:convert';
-
 import 'package:bank/models/payment_method_model.dart';
 import 'package:bank/services/auth_service.dart';
 import 'package:bank/shared/shared_values.dart';
 import 'package:http/http.dart' as http;
 
-// ? Function yang me return List Payment Methode
+//? Function yang me return List Payment Methode
 class PaymentMethodService {
   Future<List<PaymentMethodModel>> getPaymentMethods() async {
     try {
