@@ -1,7 +1,9 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/blocs/payment_method/payment_method_bloc.dart';
 import 'package:bank/models/payment_method_model.dart';
+import 'package:bank/models/topup_form_model.dart';
 import 'package:bank/shared/theme.dart';
+import 'package:bank/ui/pages/topup_amount_page.dart';
 import 'package:bank/ui/widgets/bank_item.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -107,7 +109,15 @@ class _TopupPageState extends State<TopupPage> {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/topup-amount');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TopupAmountPage(
+                          data: TopupFormModel(
+                              paymentMethodCode: selectedPaymentMethod?.code),
+                        ),
+                      ),
+                    );
                   },
                 ),
               const SizedBox(height: 57),
