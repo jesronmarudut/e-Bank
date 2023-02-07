@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:bank/models/sign_up_form_model.dart';
 import 'package:bank/models/sign_in_form_model.dart';
-import 'package:bank/models/sign_up_form_model.dart';
 import 'package:bank/models/user_edit_form_model.dart';
 // import 'package:bank/models/user_edit_form_model.dart';
 import 'package:bank/models/user_model.dart';

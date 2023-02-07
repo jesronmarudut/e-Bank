@@ -24,10 +24,10 @@ class PackageItem extends StatelessWidget {
         vertical: 22,
       ),
       decoration: BoxDecoration(
-        color: warnaGrey,
+        color: greyColor,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: isSelected ? warnaGrey3 : warnaGrey2,
+          color: isSelected ? greyColor3 : greyColor2,
           width: 2,
         ),
       ),

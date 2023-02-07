@@ -21,7 +21,7 @@ class HomeUserItem extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
-        color: warnaGrey,
+        color: greyColor,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

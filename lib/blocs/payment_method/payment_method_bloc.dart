@@ -12,13 +12,29 @@ class PaymentMethodBloc extends Bloc<PaymentMethodEvent, PaymentMethodState> {
       if (event is PaymentMethodGet) {
         try {
           emit(PaymentMethodLoading());
-          final paymentMethods =
-              await PaymentMethodService().getPaymentMethods();
-          emit(PaymentMethodSuccess(paymentMethods));
+
+          final res = await PaymentMethodService().getPaymentMethods();
+
+          emit(PaymentMethodSuccess(res));
         } catch (e) {
+          print(emit);
           emit(PaymentMethodFailed(e.toString()));
         }
       }
     });
   }
 }
+
+//       class PaymentMethodBloc extends Bloc<PaymentMethodEvent, PaymentMethodState> {
+        // PaymentMethodBloc() : super(PaymentMethodInitial()) {
+        //   on<PaymentMethodEvent>((event, emit) async {
+        //     if (event is PaymentMethodGet) {
+        //       try {
+        //         emit(PaymentMethodLoading());
+
+        //         final res = await TransactionService().getPaymentMethods();
+
+        //         emit(PaymentMethodSuccess(res));
+        //       } catch (e) {
+        //         emit(PaymentMethodFailed(e.toString()));
+        //       }

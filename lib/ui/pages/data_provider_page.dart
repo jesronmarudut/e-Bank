@@ -28,7 +28,7 @@ class DataProviderPage extends StatelessWidget {
               fontWeight: semiBold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             children: [
               Image.asset(

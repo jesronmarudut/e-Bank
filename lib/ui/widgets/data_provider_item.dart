@@ -20,11 +20,11 @@ class DataProviderItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 18),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: warnaGrey,
+        color: greyColor,
         border: isSelected
             ? Border.all(
                 width: 2,
-                color: warnaGrey2,
+                color: greyColor2,
               )
             : null,
       ),

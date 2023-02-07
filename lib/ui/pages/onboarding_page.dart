@@ -74,7 +74,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   vertical: 24,
                 ),
                 decoration: BoxDecoration(
-                  color: warnaGrey,
+                  color: greyColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
@@ -123,8 +123,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 0
-                                        ? warnaBiru
-                                        : warnaPutih),
+                                        ? yellowColor
+                                        : whiteColor),
                               ),
                               Container(
                                 width: 12,
@@ -133,8 +133,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 1
-                                        ? warnaBiru
-                                        : warnaPutih),
+                                        ? yellowColor
+                                        : whiteColor),
                               ),
                               Container(
                                 width: 12,
@@ -143,8 +143,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 2
-                                        ? warnaBiru
-                                        : warnaPutih),
+                                        ? yellowColor
+                                        : whiteColor),
                               ),
                               const Spacer(),
                               CustomFilledButton(

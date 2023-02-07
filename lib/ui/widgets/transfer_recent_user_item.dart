@@ -22,7 +22,7 @@ class TransferRecentUserItem extends StatelessWidget {
         padding: const EdgeInsets.all(22),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: warnaPutih,
+          color: whiteColor,
         ),
         child: Row(
           children: [
@@ -56,7 +56,7 @@ class TransferRecentUserItem extends StatelessWidget {
             if (isVerified)
               Row(
                 children: [
-                  Icon(Icons.check_circle, size: 14, color: warnaHijau),
+                  Icon(Icons.check_circle, size: 14, color: greenColor),
                   const SizedBox(width: 4),
                   Text(
                     'Verified',

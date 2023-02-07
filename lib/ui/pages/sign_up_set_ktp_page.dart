@@ -89,7 +89,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: warnaGrey,
+                  color: greyColor,
                 ),
                 child: Column(
                   children: [
@@ -102,7 +102,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                         height: 120,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: warnaGrey2,
+                          color: greyColor2,
                           image: selectedImage == null
                               ? null
                               : DecorationImage(
@@ -146,7 +146,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                               content: const Text(
                                 'Gambar tidak boleh kosong',
                               ),
-                              backgroundColor: warnaMerah2,
+                              backgroundColor: redColor2,
                             ),
                           );
                         } else {

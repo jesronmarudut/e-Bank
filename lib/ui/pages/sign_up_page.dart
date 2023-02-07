@@ -68,7 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: warnaGrey,
+              color: greyColor,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +123,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           content: Text(
                             state.e,
                           ),
-                          backgroundColor: warnaMerah2,
+                          backgroundColor: redColor2,
                         ),
                       );
                     }
@@ -148,7 +148,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               content: const Text(
                                 'Semua field harus diisi',
                               ),
-                              backgroundColor: warnaMerah2,
+                              backgroundColor: redColor2,
                             ),
                           );
                         }

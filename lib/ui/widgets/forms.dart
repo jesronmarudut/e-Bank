@@ -32,7 +32,7 @@ class CustomFormField extends StatelessWidget {
         if (isShowTitle) const SizedBox(height: 8),
         TextFormField(
           obscureText: obscureText,
-          cursorColor: warnaPutih,
+          cursorColor: whiteColor,
           style: whiteTextStyle,
           controller: controller,
           keyboardType: keyboardType,

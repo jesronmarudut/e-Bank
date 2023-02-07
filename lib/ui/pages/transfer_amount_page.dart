@@ -2,7 +2,6 @@ import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class TransferAmountPage extends StatefulWidget {
   const TransferAmountPage({Key? key});
@@ -56,7 +55,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: warnaHitam,
+      backgroundColor: blackColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 58,
@@ -77,7 +76,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
               child: TextFormField(
                 controller: amountController,
                 enabled: false,
-                cursorColor: warnaGrey,
+                cursorColor: greyColor,
                 style:
                     whiteTextStyle.copyWith(fontSize: 36, fontWeight: medium),
                 decoration: InputDecoration(
@@ -90,7 +89,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                   ),
                   disabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: warnaGrey2,
+                      color: greyColor2,
                     ),
                   ),
                 ),
@@ -172,12 +171,12 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: warnaMerah2,
+                    color: redColor2,
                   ),
                   child: Center(
                     child: Icon(
                       Icons.arrow_back,
-                      color: warnaPutih,
+                      color: whiteColor,
                     ),
                   ),
                 ),

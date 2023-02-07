@@ -48,7 +48,7 @@ class ProfilePage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 22),
                   decoration: BoxDecoration(
-                    color: warnaGrey,
+                    color: greyColor,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
@@ -74,11 +74,11 @@ class ProfilePage extends StatelessWidget {
                                   height: 28,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: warnaPutih,
+                                    color: whiteColor,
                                   ),
                                   child: Center(
                                     child: Icon(Icons.check_circle,
-                                        color: warnaHijau, size: 24),
+                                        color: greenColor, size: 24),
                                   ),
                                 ),
                               )

@@ -18,20 +18,20 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: BottomAppBar(
-        color: warnaPutih,
+        color: whiteColor,
         shape: const CircularNotchedRectangle(),
         clipBehavior: Clip.antiAlias,
         notchMargin: 6,
         elevation: 0,
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: warnaHitam,
+          backgroundColor: blackColor,
           elevation: 0,
-          selectedItemColor: warnaKuning,
-          unselectedItemColor: warnaPutih,
+          selectedItemColor: yellowColor,
+          unselectedItemColor: whiteColor,
           showSelectedLabels: true,
           showUnselectedLabels: true,
-          selectedLabelStyle: blueTextStyle.copyWith(
+          selectedLabelStyle: yellowTextStyle.copyWith(
             fontSize: 10,
             fontWeight: medium,
           ),
@@ -44,20 +44,20 @@ class HomePage extends StatelessWidget {
               icon: Image.asset(
                 'assets/ic_overview.png',
                 width: 20,
-                color: warnaPutih,
+                color: whiteColor,
               ),
               label: 'Overview',
             ),
             BottomNavigationBarItem(
               icon: Image.asset('assets/ic_history.png',
-                  width: 20, color: warnaPutih),
+                  width: 20, color: whiteColor),
               label: 'History',
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/ic_statistic.png',
                 width: 20,
-                color: warnaPutih,
+                color: whiteColor,
               ),
               label: 'Statistic',
             ),
@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
               icon: Image.asset(
                 'assets/ic_reward.png',
                 width: 20,
-                color: warnaPutih,
+                color: whiteColor,
               ),
               label: 'Reward',
             ),
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: warnaKuning,
+        backgroundColor: yellowColor,
         child: Image.asset(
           'assets/ic_plus_circle.png',
           width: 24,
@@ -147,12 +147,12 @@ class HomePage extends StatelessWidget {
                               height: 16,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: warnaPutih,
+                                color: whiteColor,
                               ),
                               child: Center(
                                 child: Icon(
                                   Icons.check_circle,
-                                  color: warnaHijau,
+                                  color: greenColor,
                                   size: 14,
                                 ),
                               ),
@@ -238,7 +238,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: warnaGrey,
+        color: greyColor,
       ),
       child: Column(
         children: [
@@ -267,8 +267,8 @@ class HomePage extends StatelessWidget {
             child: LinearProgressIndicator(
               value: 0.35,
               minHeight: 5,
-              valueColor: AlwaysStoppedAnimation(warnaKuning),
-              backgroundColor: warnaGrey3,
+              valueColor: AlwaysStoppedAnimation(yellowColor),
+              backgroundColor: greyColor3,
             ),
           ),
         ],
@@ -349,7 +349,7 @@ class HomePage extends StatelessWidget {
             margin: const EdgeInsets.only(top: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: warnaGrey,
+              color: greyColor,
             ),
             child: Column(
               children: [
@@ -499,7 +499,7 @@ class MoreDialog extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: warnaHitam,
+          color: blackColor,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

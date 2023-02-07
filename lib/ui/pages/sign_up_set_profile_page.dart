@@ -63,7 +63,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: warnaGrey,
+              color: greyColor,
             ),
             child: Column(
               children: [
@@ -79,7 +79,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                     height: 120,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: warnaGrey2,
+                      color: greyColor2,
                       image: selectedImage == null
                           ? null
                           : DecorationImage(

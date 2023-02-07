@@ -65,7 +65,7 @@ class _PinPageState extends State<PinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: warnaHitam,
+      backgroundColor: blackColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 58),
@@ -88,17 +88,17 @@ class _PinPageState extends State<PinPage> {
                   controller: pinController,
                   enabled: false,
                   obscureText: true,
-                  cursorColor: warnaGrey,
+                  cursorColor: greyColor,
                   obscuringCharacter: '•',
                   style: greenTextStyle.copyWith(
                       fontSize: 50,
                       fontWeight: medium,
                       letterSpacing: 16,
-                      color: isError ? warnaMerah : warnaPutih),
+                      color: isError ? redColor : whiteColor),
                   decoration: InputDecoration(
                     disabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: warnaGrey,
+                        color: greyColor,
                       ),
                     ),
                   ),
@@ -163,7 +163,7 @@ class _PinPageState extends State<PinPage> {
                       addPin('9');
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 60,
                     height: 60,
                   ),
@@ -182,12 +182,12 @@ class _PinPageState extends State<PinPage> {
                       height: 60,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: warnaMerah2,
+                        color: redColor2,
                       ),
                       child: Center(
                         child: Icon(
                           Icons.arrow_back,
-                          color: warnaPutih,
+                          color: whiteColor,
                         ),
                       ),
                     ),
