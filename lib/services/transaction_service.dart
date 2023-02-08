@@ -8,17 +8,18 @@ import 'package:http/http.dart' as http;
 class TransactionService {
   Future<String> topup(TopupFormModel data) async {
     try {
+      print(data.toJson());
       final token = await AuthService().getToken();
       final res = await http.post(
         Uri.parse('$baseUrl/top_ups'),
         headers: {
-          'Authorization': token,
+          'Authorization': 'Bearer $token',
         },
         body: data.toJson(),
       );
-
+      print(res.body);
       if (res.statusCode == 200) {
-        return jsonDecode(res.body)['redirect_urll'];
+        return jsonDecode(res.body)['redirect_url'];
       }
       throw jsonDecode(res.body)['message'];
     } catch (e) {

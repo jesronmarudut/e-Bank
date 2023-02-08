@@ -228,7 +228,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                       }
                     }),
                 const SizedBox(height: 25),
-                CustomTextButton(title: 'Terms & Conditions'),
+                const CustomTextButton(title: 'Terms & Conditions'),
                 const SizedBox(height: 40),
               ],
             );
