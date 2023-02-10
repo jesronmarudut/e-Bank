@@ -20,8 +20,10 @@ class HomeUserItem extends StatelessWidget {
         right: 17,
       ),
       decoration: BoxDecoration(
+        // Border
+        border: Border.all(width: 0.1),
         borderRadius: BorderRadius.circular(5),
-        color: greyColor,
+        color: whiteColor,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +44,7 @@ class HomeUserItem extends StatelessWidget {
           ),
           Text(
             '@$username',
-            style: whiteTextStyle.copyWith(
+            style: purpleTextStyle.copyWith(
               fontSize: 12,
               fontWeight: medium,
             ),

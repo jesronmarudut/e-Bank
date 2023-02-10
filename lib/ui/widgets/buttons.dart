@@ -23,14 +23,14 @@ class CustomFilledButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          backgroundColor: yellowColor,
+          backgroundColor: purpleColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           ),
         ),
         child: Text(
           title,
-          style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          style: whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
         ),
       ),
     );
@@ -61,9 +61,7 @@ class CustomTextButton extends StatelessWidget {
         style: TextButton.styleFrom(padding: EdgeInsets.zero),
         child: Text(
           title,
-          style: whiteTextStyle.copyWith(
-            fontSize: 16,
-          ),
+          style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
         ),
       ),
     );
@@ -88,12 +86,12 @@ class CustomInputButton extends StatelessWidget {
         height: 60,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: greyColor,
+          color: greyColor4,
         ),
         child: Center(
           child: Text(
             title,
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 22,
               fontWeight: semiBold,
             ),

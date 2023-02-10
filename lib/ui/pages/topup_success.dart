@@ -14,7 +14,7 @@ class TopupSuccessPage extends StatelessWidget {
         children: [
           Text(
             'Top Up\nWallet Berhasil',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),

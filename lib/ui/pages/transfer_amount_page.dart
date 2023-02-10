@@ -55,7 +55,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: whiteColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 58,
@@ -66,7 +66,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
             child: Text(
               'Total Amount',
               style:
-                  whiteTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
+                  blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
             ),
           ),
           const SizedBox(height: 67),
@@ -76,20 +76,15 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
               child: TextFormField(
                 controller: amountController,
                 enabled: false,
-                cursorColor: greyColor,
+                cursorColor: whiteColor,
                 style:
-                    whiteTextStyle.copyWith(fontSize: 36, fontWeight: medium),
+                    blackTextStyle.copyWith(fontSize: 36, fontWeight: medium),
                 decoration: InputDecoration(
                   prefixIcon: Text(
                     'Rp ',
-                    style: greenTextStyle.copyWith(
+                    style: blackTextStyle.copyWith(
                       fontSize: 36,
                       fontWeight: medium,
-                    ),
-                  ),
-                  disabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: greyColor2,
                     ),
                   ),
                 ),
@@ -171,12 +166,12 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: redColor2,
+                    color: greyColor4,
                   ),
                   child: Center(
                     child: Icon(
                       Icons.arrow_back,
-                      color: whiteColor,
+                      color: blackColor,
                     ),
                   ),
                 ),
@@ -193,7 +188,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                 }
               }),
           const SizedBox(height: 25),
-          CustomTextButton(title: 'Terms & Conditions'),
+          // CustomTextButton(title: 'Terms & Conditions'),
           const SizedBox(height: 40),
         ],
       ),

@@ -56,7 +56,7 @@ class _SignInPageState extends State<SignInPage> {
                           image: AssetImage('assets/img_logo_light.png')))),
               Text(
                 'Sign In &\nGrow Your Finance',
-                style: whiteTextStyle.copyWith(
+                style: blackTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -66,7 +66,15 @@ class _SignInPageState extends State<SignInPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: greyColor,
+                  color: whiteColor,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffDDDDDD),
+                      blurRadius: 6.0,
+                      spreadRadius: 2.0,
+                      offset: Offset(0.0, 0.0),
+                    )
+                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

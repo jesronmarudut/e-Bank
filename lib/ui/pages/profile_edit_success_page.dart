@@ -14,7 +14,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
         children: [
           Text(
             'Profile successfully updated.',
-            style: yellowTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
@@ -25,7 +25,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
           ),
           Text(
             'Your data is safe with\n our system',
-            style: whiteTextStyle.copyWith(
+            style: greyTextStyle3.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,

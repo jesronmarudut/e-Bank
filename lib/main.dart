@@ -39,15 +39,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: blackColor,
+          scaffoldBackgroundColor: whiteColor,
           appBarTheme: AppBarTheme(
-            backgroundColor: blackColor,
+            backgroundColor: whiteColor,
             elevation: 0,
             centerTitle: true,
             iconTheme: IconThemeData(
-              color: whiteColor,
+              color: blackColor,
             ),
-            titleTextStyle: whiteTextStyle.copyWith(
+            titleTextStyle: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),

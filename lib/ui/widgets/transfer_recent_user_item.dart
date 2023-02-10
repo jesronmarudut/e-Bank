@@ -43,12 +43,12 @@ class TransferRecentUserItem extends StatelessWidget {
                 Text(
                   name,
                   style:
-                      whiteTextStyle.copyWith(fontSize: 16, fontWeight: medium),
+                      blackTextStyle.copyWith(fontSize: 16, fontWeight: medium),
                 ),
                 const SizedBox(height: 2),
                 Text(
                   '@$username',
-                  style: greyTextStyle.copyWith(fontSize: 12),
+                  style: blackTextStyle.copyWith(fontSize: 12),
                 ),
               ],
             ),
@@ -60,7 +60,7 @@ class TransferRecentUserItem extends StatelessWidget {
                   const SizedBox(width: 4),
                   Text(
                     'Verified',
-                    style: greenTextStyle.copyWith(
+                    style: blackTextStyle.copyWith(
                       fontSize: 11,
                       fontWeight: medium,
                     ),

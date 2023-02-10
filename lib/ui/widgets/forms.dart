@@ -25,20 +25,20 @@ class CustomFormField extends StatelessWidget {
         if (isShowTitle)
           Text(
             title,
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontWeight: medium,
             ),
           ),
         if (isShowTitle) const SizedBox(height: 8),
         TextFormField(
           obscureText: obscureText,
-          cursorColor: whiteColor,
-          style: whiteTextStyle,
+          cursorColor: blackColor,
+          style: blackTextStyle,
           controller: controller,
           keyboardType: keyboardType,
           decoration: InputDecoration(
             hintText: !isShowTitle ? title : null,
-            hintStyle: greyTextStyle3,
+            hintStyle: greyTextStyle,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
             ),

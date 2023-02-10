@@ -66,7 +66,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: whiteColor,
       body: BlocProvider(
         create: (context) => TopupBloc(),
         child: BlocConsumer<TopupBloc, TopupState>(
@@ -98,7 +98,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                 Center(
                   child: Text(
                     'Total Amount',
-                    style: whiteTextStyle.copyWith(
+                    style: blackTextStyle.copyWith(
                         fontSize: 20, fontWeight: semiBold),
                   ),
                 ),
@@ -109,22 +109,22 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                     child: TextFormField(
                       controller: amountController,
                       enabled: false,
-                      cursorColor: greyColor,
-                      style: whiteTextStyle.copyWith(
+                      // cursorColor: greyColor,
+                      style: blackTextStyle.copyWith(
                           fontSize: 36, fontWeight: medium),
                       decoration: InputDecoration(
                         prefixIcon: Text(
                           'Rp ',
-                          style: greenTextStyle.copyWith(
+                          style: blackTextStyle.copyWith(
                             fontSize: 36,
                             fontWeight: medium,
                           ),
                         ),
-                        disabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: greyColor,
-                          ),
-                        ),
+                        // disabledBorder: UnderlineInputBorder(
+                        //   borderSide: BorderSide(
+                        //     color: blackColor,
+                        //   ),
+                        // ),
                       ),
                     ),
                   ),
@@ -188,7 +188,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                         addAmount('9');
                       },
                     ),
-                    SizedBox(width: 60, height: 60),
+                    const SizedBox(width: 60, height: 60),
                     CustomInputButton(
                       title: '0',
                       onTap: () {
@@ -204,12 +204,12 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                         height: 60,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: redColor2,
+                          color: greyColor4,
                         ),
                         child: Center(
                           child: Icon(
                             Icons.arrow_back,
-                            color: whiteColor,
+                            color: blackColor,
                           ),
                         ),
                       ),

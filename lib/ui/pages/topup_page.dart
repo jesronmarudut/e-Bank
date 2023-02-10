@@ -33,7 +33,7 @@ class _TopupPageState extends State<TopupPage> {
           ),
           Text(
             'Wallet',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -60,9 +60,9 @@ class _TopupPageState extends State<TopupPage> {
                         Text(
                           state.user.cardNumber!.replaceAllMapped(
                               RegExp(r".{4}"), (match) => "${match.group(0)} "),
-                          style: whiteTextStyle.copyWith(
+                          style: blackTextStyle.copyWith(
                             fontSize: 16,
-                            fontWeight: medium,
+                            fontWeight: semiBold,
                           ),
                         ),
                         const SizedBox(
@@ -70,8 +70,8 @@ class _TopupPageState extends State<TopupPage> {
                         ),
                         Text(
                           state.user.name.toString(),
-                          style: whiteTextStyle.copyWith(
-                            fontSize: 12,
+                          style: blackTextStyle.copyWith(
+                            fontSize: 13,
                           ),
                         ),
                       ],
@@ -87,7 +87,7 @@ class _TopupPageState extends State<TopupPage> {
           ),
           Text(
             'Select Bank',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

@@ -68,7 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: greyColor,
+              color: whiteColor,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

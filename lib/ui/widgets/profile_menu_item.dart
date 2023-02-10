@@ -27,8 +27,8 @@ class ProfileMenuItem extends StatelessWidget {
             const SizedBox(width: 18),
             Text(
               title,
-              style: whiteTextStyle.copyWith(
-                fontWeight: medium,
+              style: blackTextStyle.copyWith(
+                fontWeight: semiBold,
               ),
             )
           ],

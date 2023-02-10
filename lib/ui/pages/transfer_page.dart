@@ -24,27 +24,27 @@ class TransferPage extends StatelessWidget {
           ),
           Text(
             'Search',
-            style: whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
           ),
           const SizedBox(height: 16),
           const CustomFormField(
-            title: 'Username',
+            title: 'Type Username',
             isShowTitle: false,
           ),
-          // buildRecentUsers()
+          // buildRecentUsers(),
           buildResult(),
-          const SizedBox(
-            height: 274,
+          const SizedBox(height: 350),
+
+          Container(
+            margin: const EdgeInsets.all(24),
+            child: CustomFilledButton(
+              title: 'Continue',
+              onPressed: () {
+                Navigator.pushNamed(context, '/transfer-amount');
+              },
+            ),
           ),
-          CustomFilledButton(
-            title: 'Continue',
-            onPressed: () {
-              Navigator.pushNamed(context, '/transfer-amount');
-            },
-          ),
-          const SizedBox(
-            height: 50,
-          )
+          const SizedBox(height: 50)
         ],
       ),
     );
@@ -60,7 +60,7 @@ class TransferPage extends StatelessWidget {
         children: [
           Text(
             'Recent Users',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -97,7 +97,7 @@ class TransferPage extends StatelessWidget {
         children: [
           Text(
             'Result',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

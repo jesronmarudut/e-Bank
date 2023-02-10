@@ -36,7 +36,7 @@ class _PinPageState extends State<PinPage> {
         });
         showCustomSnackbar(
           context,
-          'PIN yang anda masukkan salah!',
+          'PIN does not match!',
         );
       }
     }
@@ -65,7 +65,7 @@ class _PinPageState extends State<PinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: whiteColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 58),
@@ -74,7 +74,7 @@ class _PinPageState extends State<PinPage> {
             children: [
               Text(
                 'Your PIN',
-                style: whiteTextStyle.copyWith(
+                style: blackTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -90,18 +90,18 @@ class _PinPageState extends State<PinPage> {
                   obscureText: true,
                   cursorColor: greyColor,
                   obscuringCharacter: '•',
-                  style: greenTextStyle.copyWith(
+                  style: blackTextStyle.copyWith(
                       fontSize: 50,
                       fontWeight: medium,
                       letterSpacing: 16,
-                      color: isError ? redColor : whiteColor),
-                  decoration: InputDecoration(
-                    disabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: greyColor,
-                      ),
-                    ),
-                  ),
+                      color: isError ? redColor : blackColor),
+                  // decoration: InputDecoration(
+                  //     // disabledBorder: UnderlineInputBorder(
+                  //     //   borderSide: BorderSide(
+                  //     //     color: greyColor,
+                  //     //   ),
+                  //     // ),
+                  //     ),
                 ),
               ),
               const SizedBox(height: 66),
@@ -182,12 +182,12 @@ class _PinPageState extends State<PinPage> {
                       height: 60,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: redColor2,
+                        color: greyColor4,
                       ),
                       child: Center(
                         child: Icon(
                           Icons.arrow_back,
-                          color: whiteColor,
+                          color: blackColor,
                         ),
                       ),
                     ),

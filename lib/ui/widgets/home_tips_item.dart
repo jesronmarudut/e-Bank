@@ -26,8 +26,9 @@ class HomeTipsItem extends StatelessWidget {
         width: 220,
         height: 176,
         decoration: BoxDecoration(
+          border: Border.all(width: 0.1),
           borderRadius: BorderRadius.circular(5),
-          color: greyColor,
+          color: purpleColor,
         ),
         child: Column(
           children: [

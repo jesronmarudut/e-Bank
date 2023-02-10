@@ -24,8 +24,8 @@ class BankItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         color: whiteColor,
         border: Border.all(
-          width: 2,
-          color: isSelected ? yellowColor : greyColor,
+          width: 1,
+          color: isSelected ? purpleColor : greyColor4,
         ),
       ),
       child: Row(

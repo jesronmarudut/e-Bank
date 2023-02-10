@@ -1,5 +1,3 @@
-// import 'dart:js';
-
 import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
@@ -35,7 +33,7 @@ class HomePage extends StatelessWidget {
             fontSize: 10,
             fontWeight: medium,
           ),
-          unselectedLabelStyle: whiteTextStyle.copyWith(
+          unselectedLabelStyle: blackTextStyle.copyWith(
             fontSize: 10,
             fontWeight: medium,
           ),
@@ -113,12 +111,11 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(state.user.name.toString(),
-                        style: whiteTextStyle.copyWith(fontSize: 16)),
+                        style: blackTextStyle.copyWith(fontSize: 16)),
                     const SizedBox(height: 2),
                     Text(
                       state.user.username.toString(),
-                      style: whiteTextStyle.copyWith(
-                          fontSize: 20, fontWeight: semiBold),
+                      style: blackTextStyle.copyWith(fontSize: 16),
                     )
                   ],
                 ),
@@ -205,7 +202,7 @@ class HomePage extends StatelessWidget {
                     letterSpacing: 3,
                   ),
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 20),
                 Text(
                   'Balance',
                   style: whiteTextStyle.copyWith(
@@ -220,7 +217,7 @@ class HomePage extends StatelessWidget {
                     fontWeight: bold,
                     letterSpacing: 1.5,
                   ),
-                )
+                ),
               ],
             ),
           );
@@ -238,7 +235,16 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: greyColor,
+        color: whiteColor,
+        // ? Shadow
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0xffDDDDDD),
+            blurRadius: 6.0,
+            spreadRadius: 2.0,
+            offset: Offset(0.0, 0.0),
+          )
+        ],
       ),
       child: Column(
         children: [
@@ -246,19 +252,19 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 'Level 3',
-                style: whiteTextStyle.copyWith(
+                style: blackTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
               ),
               const Spacer(),
               Text(
                 '35% ',
-                style: yellowTextStyle.copyWith(
+                style: purpleTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
               ),
               Text(formatCurrency(20000),
-                  style: whiteTextStyle.copyWith(fontWeight: semiBold))
+                  style: blackTextStyle.copyWith(fontWeight: semiBold))
             ],
           ),
           const SizedBox(height: 10),
@@ -267,8 +273,8 @@ class HomePage extends StatelessWidget {
             child: LinearProgressIndicator(
               value: 0.35,
               minHeight: 5,
-              valueColor: AlwaysStoppedAnimation(yellowColor),
-              backgroundColor: greyColor3,
+              valueColor: AlwaysStoppedAnimation(purpleColor),
+              backgroundColor: greyColor4,
             ),
           ),
         ],
@@ -284,7 +290,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Do Something',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -338,8 +344,8 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Latest Transaction',
-            style: whiteTextStyle.copyWith(
+            'Transactions',
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -349,7 +355,15 @@ class HomePage extends StatelessWidget {
             margin: const EdgeInsets.only(top: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: greyColor,
+              color: whiteColor,
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0xffDDDDDD),
+                  blurRadius: 6.0,
+                  spreadRadius: 2.0,
+                  offset: Offset(0.0, 0.0),
+                )
+              ],
             ),
             child: Column(
               children: [
@@ -393,7 +407,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Send Again',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -437,7 +451,7 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Friendly Tips',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -500,7 +514,7 @@ class MoreDialog extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: blackColor,
+          color: whiteColor,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -508,7 +522,7 @@ class MoreDialog extends StatelessWidget {
             Text(
               'Do More With Us',
               style:
-                  whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+                  blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
             ),
             const SizedBox(height: 13),
             Wrap(

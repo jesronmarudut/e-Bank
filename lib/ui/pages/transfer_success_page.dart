@@ -14,7 +14,7 @@ class TransferSuccessPage extends StatelessWidget {
         children: [
           Text(
             'Transfer Success',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
