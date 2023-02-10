@@ -76,6 +76,13 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
             }
             if (state is TopupSuccess) {
               await launch(state.redirectUrl);
+              context.read<AuthBloc>().add(
+                    AuthUpdateBalance(
+                      int.parse(
+                        amountController.text.replaceAll('.', ''),
+                      ),
+                    ),
+                  );
 
               Navigator.pushNamedAndRemoveUntil(
                   context, '/topup-success', (route) => false);
