@@ -51,7 +51,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
           ),
           Text(
             'Join Us to Unlock\nYour Growth',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
@@ -63,7 +63,15 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: greyColor,
+              color: whiteColor,
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0xffDDDDDD),
+                  blurRadius: 6.0,
+                  spreadRadius: 2.0,
+                  offset: Offset(0.0, 0.0),
+                )
+              ],
             ),
             child: Column(
               children: [
@@ -79,7 +87,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                     height: 120,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: greyColor2,
+                      color: greyColor4,
                       image: selectedImage == null
                           ? null
                           : DecorationImage(
@@ -94,7 +102,8 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                         : Center(
                             child: Image.asset(
                               'assets/ic_upload.png',
-                              width: 32,
+                              width: 45,
+                              height: 45,
                             ),
                           ),
                   ),
@@ -102,14 +111,14 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                 const SizedBox(height: 16),
                 Text(
                   'Profile Picture',
-                  style: whiteTextStyle.copyWith(
+                  style: blackTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
                   ),
                 ),
                 const SizedBox(height: 30),
                 CustomFormField(
-                  title: 'Set PIN (6 Digit Number)',
+                  title: 'Set your PIN',
                   obscureText: true,
                   controller: pinController,
                   keyboardType: TextInputType.number,

@@ -61,7 +61,7 @@ class CustomTextButton extends StatelessWidget {
         style: TextButton.styleFrom(padding: EdgeInsets.zero),
         child: Text(
           title,
-          style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          style: blackTextStyle.copyWith(fontSize: 16, fontWeight: medium),
         ),
       ),
     );
@@ -93,7 +93,7 @@ class CustomInputButton extends StatelessWidget {
             title,
             style: blackTextStyle.copyWith(
               fontSize: 22,
-              fontWeight: semiBold,
+              fontWeight: medium,
             ),
           ),
         ),

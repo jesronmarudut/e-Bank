@@ -79,7 +79,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
               ),
               Text(
                 'Verify Your\nAccount',
-                style: whiteTextStyle.copyWith(
+                style: blackTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -89,7 +89,15 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: greyColor,
+                  color: whiteColor,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffDDDDDD),
+                      blurRadius: 6.0,
+                      spreadRadius: 2.0,
+                      offset: Offset(0.0, 0.0),
+                    )
+                  ],
                 ),
                 child: Column(
                   children: [
@@ -102,7 +110,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                         height: 120,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: greyColor2,
+                          color: greyColor4,
                           image: selectedImage == null
                               ? null
                               : DecorationImage(
@@ -119,7 +127,8 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                             : Center(
                                 child: Image.asset(
                                   'assets/ic_upload.png',
-                                  width: 32,
+                                  width: 45,
+                                  height: 45,
                                 ),
                               ),
                       ),
@@ -129,7 +138,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                     ),
                     Text(
                       'Passport/ID Card',
-                      style: whiteTextStyle.copyWith(
+                      style: blackTextStyle.copyWith(
                         fontSize: 18,
                         fontWeight: medium,
                       ),

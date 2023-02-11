@@ -14,7 +14,7 @@ class SignUpSuccessPage extends StatelessWidget {
         children: [
           Text(
             'Akun Berhasil\n Terdaftar',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),

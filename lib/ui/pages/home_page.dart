@@ -111,7 +111,8 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(state.user.name.toString(),
-                        style: blackTextStyle.copyWith(fontSize: 16)),
+                        style: blackTextStyle.copyWith(
+                            fontSize: 16, fontWeight: medium)),
                     const SizedBox(height: 2),
                     Text(
                       state.user.username.toString(),
@@ -193,7 +194,7 @@ class HomePage extends StatelessWidget {
                     fontWeight: semiBold,
                   ),
                 ),
-                const SizedBox(height: 28),
+                const SizedBox(height: 25),
                 Text(
                   '**** **** **** ${state.user.cardNumber!.substring(12, 16)}',
                   style: whiteTextStyle.copyWith(

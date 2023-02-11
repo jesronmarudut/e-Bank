@@ -44,7 +44,7 @@ class HomeUserItem extends StatelessWidget {
           ),
           Text(
             '@$username',
-            style: purpleTextStyle.copyWith(
+            style: greyTextStyle3.copyWith(
               fontSize: 12,
               fontWeight: medium,
             ),

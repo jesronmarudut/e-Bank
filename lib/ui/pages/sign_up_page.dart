@@ -49,7 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/img_logo_light.png',
+                  'assets/img_logo2.png',
                 ),
               ),
             ),
@@ -69,6 +69,14 @@ class _SignUpPageState extends State<SignUpPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0xffDDDDDD),
+                  blurRadius: 6.0,
+                  spreadRadius: 2.0,
+                  offset: Offset(0.0, 0.0),
+                )
+              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +142,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: CircularProgressIndicator(),
                       );
                     }
-
                     return CustomFilledButton(
                       title: 'Continue',
                       onPressed: () {
@@ -159,15 +166,20 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 50,
-          ),
+          const SizedBox(height: 50),
           CustomTextButton(
             title: 'Sign In',
             onPressed: () {
               Navigator.pushNamed(context, '/sign-in');
             },
           ),
+          // const SizedBox(height: 50),
+          // CustomTextButton(
+          //   title: 'Onboarding',
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, '/onboarding');
+          //   },
+          // ),
         ],
       ),
     );

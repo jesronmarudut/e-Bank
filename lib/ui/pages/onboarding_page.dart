@@ -38,20 +38,23 @@ class _OnboardingPageState extends State<OnboardingPage> {
               CarouselSlider(
                 items: [
                   Image.asset(
-                    'assets/img_onboarding1.png',
-                    height: 250,
+                    'assets/img_onboarding1.gif',
+                    height: 500,
+                    width: 500,
                   ),
                   Image.asset(
-                    'assets/img_onboarding2.png',
-                    height: 250,
+                    'assets/img_onboarding2.gif',
+                    height: 500,
+                    width: 500,
                   ),
                   Image.asset(
-                    'assets/img_onboarding3.png',
-                    height: 250,
+                    'assets/img_onboarding3.gif',
+                    height: 500,
+                    width: 500,
                   ),
                 ],
                 options: CarouselOptions(
-                  height: 250,
+                  height: 300,
                   viewportFraction: 1,
                   enableInfiniteScroll: false,
                   onPageChanged: (index, reason) {
@@ -74,20 +77,28 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   vertical: 24,
                 ),
                 decoration: BoxDecoration(
-                  color: greyColor,
+                  color: whiteColor,
                   borderRadius: BorderRadius.circular(20),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffDDDDDD),
+                      blurRadius: 6.0,
+                      spreadRadius: 2.0,
+                      offset: Offset(0.0, 0.0),
+                    )
+                  ],
                 ),
                 child: Column(
                   children: [
                     Text(titles[currentIndex],
-                        style: whiteTextStyle.copyWith(
+                        style: blackTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: semiBold,
                         ),
                         textAlign: TextAlign.center),
                     const SizedBox(height: 26),
                     Text(subtitles[currentIndex],
-                        style: whiteTextStyle.copyWith(
+                        style: blackTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         textAlign: TextAlign.center),
@@ -123,8 +134,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 0
-                                        ? yellowColor
-                                        : whiteColor),
+                                        ? purpleColor
+                                        : greyColor4),
                               ),
                               Container(
                                 width: 12,
@@ -133,8 +144,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 1
-                                        ? yellowColor
-                                        : whiteColor),
+                                        ? purpleColor
+                                        : greyColor4),
                               ),
                               Container(
                                 width: 12,
@@ -143,8 +154,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: currentIndex == 2
-                                        ? yellowColor
-                                        : whiteColor),
+                                        ? purpleColor
+                                        : greyColor4),
                               ),
                               const Spacer(),
                               CustomFilledButton(

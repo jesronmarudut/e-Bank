@@ -20,7 +20,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: whiteColor,
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthSuccess) {
@@ -38,7 +38,7 @@ class SplashPage extends StatelessWidget {
             height: 300,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/img_logo_dark.png'),
+                image: AssetImage('assets/img_logo1.png'),
               ),
             ),
           ),
