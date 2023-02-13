@@ -1,6 +1,8 @@
 import 'package:bank/blocs/user/user_bloc.dart';
+import 'package:bank/models/transfer_form_model.dart';
 import 'package:bank/models/user_model.dart';
 import 'package:bank/shared/theme.dart';
+import 'package:bank/ui/pages/transfer_amount_page.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:bank/ui/widgets/forms.dart';
 import 'package:bank/ui/widgets/transfer_recent_user_item.dart';
@@ -68,7 +70,16 @@ class _TransferPageState extends State<TransferPage> {
               child: CustomFilledButton(
                 title: 'Continue',
                 onPressed: () {
-                  Navigator.pushNamed(context, 'transfer-amount');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TransferAmountPage(
+                        data: TransferFormModel(
+                          sendTo: selectedUser!.username,
+                        ),
+                      ),
+                    ),
+                  );
                 },
               ),
             )
@@ -98,7 +109,22 @@ class _TransferPageState extends State<TransferPage> {
               if (state is UserSuccess) {
                 return Column(
                     children: state.users.map((user) {
-                  return TransferRecentUserItem(user: user);
+                  return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TransferAmountPage(
+                              data: TransferFormModel(
+                                sendTo: user.username,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: TransferRecentUserItem(
+                        user: user,
+                      ));
                 }).toList());
               }
               return const Center(
