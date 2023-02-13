@@ -1,4 +1,5 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
+import 'package:bank/blocs/user/user_bloc.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/pages/data_package_page.dart';
 import 'package:bank/ui/pages/data_provider_page.dart';
@@ -32,8 +33,11 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          //? AuthBloc akan cek apakah ada user yg tersimpad di dalam local
+          //? AuthBloc akan cek apakah ada user yg tersimpan di dalam local
           create: (context) => AuthBloc()..add(AuthGetCurrentUser()),
+        ),
+        BlocProvider(
+          create: (context) => UserBloc(),
         ),
       ],
       child: MaterialApp(

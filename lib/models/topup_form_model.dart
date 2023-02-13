@@ -20,7 +20,7 @@ class TopupFormModel {
         paymentMethodCode: paymentMethodCode ?? this.paymentMethodCode,
       );
 
-  //? Function untun mengubah objek ke kebentuk Json
+  //? Function untuk mengubah objek ke kebentuk Json
   Map<String, dynamic> toJson() => {
         'amount': amount,
         'pin': pin,

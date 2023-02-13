@@ -43,8 +43,8 @@ class _SignUpPageState extends State<SignUpPage> {
             width: 155,
             height: 50,
             margin: const EdgeInsets.only(
-              top: 100,
-              bottom: 100,
+              top: 50,
+              bottom: 50,
             ),
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -153,9 +153,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: const Text(
-                                'Semua field harus diisi',
+                                'Enter email and password!',
                               ),
-                              backgroundColor: redColor2,
+                              backgroundColor: redColor,
                             ),
                           );
                         }
@@ -166,7 +166,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 30),
           CustomTextButton(
             title: 'Sign In',
             onPressed: () {

@@ -22,7 +22,7 @@ class TransferRecentUserItem extends StatelessWidget {
         padding: const EdgeInsets.all(22),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: whiteColor,
+          color: greyColor4.withOpacity(0.5),
         ),
         child: Row(
           children: [

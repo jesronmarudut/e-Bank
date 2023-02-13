@@ -1,6 +1,7 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
+import 'package:bank/ui/pages/blank_page.dart';
 import 'package:bank/ui/widgets/home_latest_transaction_item.dart';
 import 'package:bank/ui/widgets/home_service_item.dart';
 import 'package:bank/ui/widgets/home_tips_item.dart';
@@ -8,81 +9,63 @@ import 'package:bank/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
+  final List<Widget> _children = [
+    const HomePage(),
+    const BlankPage(),
+  ];
+  void onPressed(int Index) {
+    setState(() {
+      currentIndex = Index;
+    });
+  }
+
+  // @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
-      bottomNavigationBar: BottomAppBar(
-        color: whiteColor,
-        shape: const CircularNotchedRectangle(),
-        clipBehavior: Clip.antiAlias,
-        notchMargin: 6,
-        elevation: 0,
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: blackColor,
-          elevation: 0,
-          selectedItemColor: yellowColor,
-          unselectedItemColor: whiteColor,
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          selectedLabelStyle: yellowTextStyle.copyWith(
-            fontSize: 10,
-            fontWeight: medium,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        type: BottomNavigationBarType.fixed,
+        onTap: onPressed,
+        backgroundColor: whiteColor,
+        selectedItemColor: purpleColor,
+        unselectedItemColor: greyColor3.withOpacity(0.5),
+        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        elevation: 10,
+        items: const [
+          BottomNavigationBarItem(
+            title: Text('Home'),
+            icon: Icon(Icons.home_filled),
           ),
-          unselectedLabelStyle: blackTextStyle.copyWith(
-            fontSize: 10,
-            fontWeight: medium,
+          BottomNavigationBarItem(
+            title: Text('History'),
+            icon: Icon(Icons.watch_later),
           ),
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_overview.png',
-                width: 20,
-                color: whiteColor,
-              ),
-              label: 'Overview',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/ic_history.png',
-                  width: 20, color: whiteColor),
-              label: 'History',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_statistic.png',
-                width: 20,
-                color: whiteColor,
-              ),
-              label: 'Statistic',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_reward.png',
-                width: 20,
-                color: whiteColor,
-              ),
-              label: 'Reward',
-            ),
-          ],
-        ),
+          BottomNavigationBarItem(
+            title: Text('Transfer'),
+            icon: Icon(Icons.account_balance_wallet_sharp),
+          ),
+          BottomNavigationBarItem(
+            title: Text('Statistic'),
+            icon: Icon(Icons.insert_chart),
+          ),
+          BottomNavigationBarItem(
+            title: Text('Reward'),
+            icon: Icon(Icons.emoji_events_rounded),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: yellowColor,
-        child: Image.asset(
-          'assets/ic_plus_circle.png',
-          width: 24,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
           buildProfile(context),
           buildWalletCard(),
@@ -95,6 +78,74 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  //     extendBody: true,
+  //     bottomNavigationBar: BottomAppBar(
+  //       color: whiteColor,
+  //       shape: const CircularNotchedRectangle(),
+  //       clipBehavior: Clip.antiAlias,
+  //       notchMargin: 6,
+  //       elevation: 0,
+  //       child: BottomNavigationBar(
+  //         type: BottomNavigationBarType.fixed,
+  //         backgroundColor: greyColor4,
+  //         elevation: 0,
+  //         selectedItemColor: blackColor,
+  //         unselectedItemColor: blueColor,
+  //         showSelectedLabels: true,
+  //         showUnselectedLabels: false,
+  //         selectedLabelStyle: blackTextStyle.copyWith(
+  //           fontSize: 10,
+  //           fontWeight: medium,
+  //         ),
+  //         unselectedLabelStyle: blackTextStyle.copyWith(
+  //           fontSize: 10,
+  //           fontWeight: medium,
+  //         ),
+  //         items: [
+  //           BottomNavigationBarItem(
+  //             icon: Image.asset(
+  //               'assets/ic_overview.png',
+  //               width: 20,
+  //               color: purpleColor,
+  //             ),
+  //             label: 'Overview',
+  //           ),
+  //           BottomNavigationBarItem(
+  //             icon: Image.asset('assets/ic_history.png',
+  //                 width: 20, color: purpleColor),
+  //             label: 'History',
+  //           ),
+  //           BottomNavigationBarItem(
+  //             icon: Image.asset(
+  //               'assets/ic_statistic.png',
+  //               width: 20,
+  //               color: purpleColor,
+  //             ),
+  //             label: 'Statistic',
+  //           ),
+  //           BottomNavigationBarItem(
+  //             icon: Image.asset(
+  //               'assets/ic_reward.png',
+  //               width: 20,
+  //               color: purpleColor,
+  //             ),
+  //             label: 'Reward',
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //     floatingActionButton: FloatingActionButton(
+  //       onPressed: () {},
+  //       backgroundColor: greyColor4,
+  //       child: Image.asset(
+  //         'assets/ic_plus_circle.png',
+  //         width: 24,
+  //       ),
+  //     ),
+  //     floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+  // );
 
   Widget buildProfile(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
@@ -194,7 +245,7 @@ class HomePage extends StatelessWidget {
                     fontWeight: semiBold,
                   ),
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 20),
                 Text(
                   '**** **** **** ${state.user.cardNumber!.substring(12, 16)}',
                   style: whiteTextStyle.copyWith(
@@ -203,7 +254,7 @@ class HomePage extends StatelessWidget {
                     letterSpacing: 3,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Text(
                   'Balance',
                   style: whiteTextStyle.copyWith(
@@ -457,9 +508,7 @@ class HomePage extends StatelessWidget {
               fontWeight: semiBold,
             ),
           ),
-          const SizedBox(
-            height: 14,
-          ),
+          const SizedBox(height: 14),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Wrap(
@@ -493,7 +542,6 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20),
         ],
       ),
     );
