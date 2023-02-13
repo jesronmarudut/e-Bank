@@ -1,19 +1,15 @@
+import 'package:bank/models/user_model.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class TransferResultUserItem extends StatelessWidget {
-  final String imageUrl;
-  final String name;
-  final String username;
-  final bool isVerified;
+  final UserModel user;
+
   final bool isSelected;
 
   const TransferResultUserItem({
     Key? key,
-    required this.imageUrl,
-    required this.name,
-    required this.username,
-    this.isVerified = false,
+    required this.user,
     this.isSelected = false,
   });
 
@@ -42,12 +38,12 @@ class TransferResultUserItem extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: AssetImage(
-                  imageUrl,
-                ),
+                image: user.profilePicture == null
+                    ? const AssetImage('assets/img_profile.png')
+                    : NetworkImage(user.profilePicture!) as ImageProvider,
               ),
             ),
-            child: isVerified
+            child: user.verified == 1
                 ? Align(
                     alignment: Alignment.topRight,
                     child: Container(
@@ -70,7 +66,7 @@ class TransferResultUserItem extends StatelessWidget {
           ),
           const SizedBox(height: 13),
           Text(
-            name,
+            user.username.toString(),
             style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: medium,
@@ -80,7 +76,7 @@ class TransferResultUserItem extends StatelessWidget {
             height: 2,
           ),
           Text(
-            '@$username',
+            '@${user.username}',
             style: greyTextStyle.copyWith(
               fontSize: 12,
             ),

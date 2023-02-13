@@ -52,6 +52,7 @@ class _TransferPageState extends State<TransferPage> {
               if (value.isNotEmpty) {
                 userBloc.add(UserGetByUsername(usernameController.text));
               } else {
+                selectedUser = null;
                 userBloc.add(UserGetRecent());
               }
               setState(() {});
@@ -59,15 +60,6 @@ class _TransferPageState extends State<TransferPage> {
           ),
           usernameController.text.isEmpty ? buildRecentUsers() : buildResult(),
           const SizedBox(height: 50),
-          // Container(
-          //   margin: const EdgeInsets.all(24),
-          //   child: CustomFilledButton(
-          //     title: 'Continue',
-          //     onPressed: () {
-          //       Navigator.pushNamed(context, '/transfer-amount');
-          //     },
-          //   ),
-          // ),
         ],
       ),
       floatingActionButton: selectedUser != null
@@ -101,24 +93,19 @@ class _TransferPageState extends State<TransferPage> {
             ),
           ),
           const SizedBox(height: 14),
-          const TransferRecentUserItem(
-            imageUrl: 'assets/img_friend1.png',
-            name: 'Yoona Jie',
-            username: 'yoenna',
-            isVerified: true,
-          ),
-          const TransferRecentUserItem(
-            imageUrl: 'assets/img_friend2.png',
-            name: 'John Tajh',
-            username: 'JonhT',
-            isVerified: false,
-          ),
-          const TransferRecentUserItem(
-            imageUrl: 'assets/img_friend3.png',
-            name: 'Udin ',
-            username: 'Youdin',
-            isVerified: false,
-          ),
+          BlocBuilder<UserBloc, UserState>(
+            builder: (context, state) {
+              if (state is UserSuccess) {
+                return Column(
+                    children: state.users.map((user) {
+                  return TransferRecentUserItem(user: user);
+                }).toList());
+              }
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            },
+          )
         ],
       ),
     );
@@ -138,24 +125,30 @@ class _TransferPageState extends State<TransferPage> {
             ),
           ),
           const SizedBox(height: 14),
-          Wrap(
-            spacing: 17,
-            runSpacing: 17,
-            children: const [
-              TransferResultUserItem(
-                imageUrl: 'assets/img_friend1.png',
-                name: 'May',
-                username: 'Meyyyy',
-                isVerified: true,
-              ),
-              TransferResultUserItem(
-                imageUrl: 'assets/img_friend2.png',
-                name: 'May',
-                username: 'Meyyyy',
-                isVerified: false,
-                isSelected: true,
-              ),
-            ],
+          BlocBuilder<UserBloc, UserState>(
+            builder: (context, state) {
+              if (state is UserSuccess) {
+                return Wrap(
+                    spacing: 17,
+                    runSpacing: 17,
+                    children: state.users.map((user) {
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedUser = user;
+                          });
+                        },
+                        child: TransferResultUserItem(
+                          user: user,
+                          isSelected: user.id == selectedUser?.id,
+                        ),
+                      );
+                    }).toList());
+              }
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            },
           ),
         ],
       ),
