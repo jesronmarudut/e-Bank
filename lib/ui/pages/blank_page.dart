@@ -12,23 +12,18 @@ class BlankPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'Transfer Success',
-            style: whiteTextStyle.copyWith(
-              fontSize: 20,
-              fontWeight: semiBold,
+          Container(
+            width: 500,
+            height: 500,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/blankpage.gif',
+                ),
+              ),
             ),
-            textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 26),
-          Text(
-            'Nothing to see here\npress button home',
-            style: greyTextStyle3.copyWith(
-              fontSize: 16,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 20),
           CustomFilledButton(
             width: 183,
             title: 'Back to Home',

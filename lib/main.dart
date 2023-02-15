@@ -1,6 +1,7 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/blocs/user/user_bloc.dart';
 import 'package:bank/shared/theme.dart';
+import 'package:bank/ui/pages/blank_page.dart';
 import 'package:bank/ui/pages/data_package_page.dart';
 import 'package:bank/ui/pages/data_provider_page.dart';
 import 'package:bank/ui/pages/data_success_page.dart';
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const SplashPage(),
           '/onboarding': (context) => const OnboardingPage(),
+          '/blankpage': (context) => const BlankPage(),
           '/sign-in': (context) => const SignInPage(),
           '/sign-up': (context) => const SignUpPage(),
           '/sign-up-success': (context) => const SignUpSuccessPage(),

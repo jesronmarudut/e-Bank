@@ -66,19 +66,22 @@ class TransferResultUserItem extends StatelessWidget {
           ),
           const SizedBox(height: 13),
           Text(
-            user.username.toString(),
+            user.name.toString(),
             style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: medium,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           const SizedBox(
             height: 2,
           ),
           Text(
-            '@${user.username}',
+            // '@${user.username}',
+            user.username.toString(),
             style: greyTextStyle.copyWith(
               fontSize: 12,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

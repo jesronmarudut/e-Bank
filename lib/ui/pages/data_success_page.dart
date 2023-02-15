@@ -13,24 +13,34 @@ class DataSuccessPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Paket Data\nBerhasil Terbeli',
-            style: whiteTextStyle.copyWith(
-              fontSize: 20,
+            'Top up Package Data\nSuccess',
+            style: purpleTextStyle.copyWith(
+              fontSize: 25,
               fontWeight: semiBold,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
-            height: 26,
+          const SizedBox(height: 10),
+          Container(
+            width: 300,
+            height: 300,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/success.gif',
+                ),
+              ),
+            ),
           ),
+          const SizedBox(height: 10),
           Text(
             'Use the money wisely and\ngrow your finance',
-            style: greyTextStyle.copyWith(
+            style: greyTextStyle3.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 40),
           CustomFilledButton(
             width: 183,
             title: 'Back to Home',

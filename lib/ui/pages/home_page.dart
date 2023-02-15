@@ -37,31 +37,51 @@ class _HomePageState extends State<HomePage> {
         onTap: onPressed,
         backgroundColor: whiteColor,
         selectedItemColor: purpleColor,
-        unselectedItemColor: greyColor3.withOpacity(0.5),
-        showUnselectedLabels: false,
+        unselectedItemColor: greyColor3.withOpacity(0.8),
+        showUnselectedLabels: true,
         showSelectedLabels: true,
         elevation: 10,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            title: Text('Home'),
-            icon: Icon(Icons.home_filled),
-          ),
+              title: const Text('Home'),
+              icon: IconButton(
+                icon: const Icon(Icons.home_filled),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+              )),
           BottomNavigationBarItem(
-            title: Text('History'),
-            icon: Icon(Icons.watch_later),
-          ),
+              title: const Text('History'),
+              icon: IconButton(
+                icon: const Icon(Icons.watch_later),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/blankpage');
+                },
+              )),
           BottomNavigationBarItem(
-            title: Text('Transfer'),
-            icon: Icon(Icons.account_balance_wallet_sharp),
-          ),
+              title: const Text('Transfer'),
+              icon: IconButton(
+                icon: const Icon(Icons.account_balance_wallet_sharp),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/blankpage');
+                },
+              )),
           BottomNavigationBarItem(
-            title: Text('Statistic'),
-            icon: Icon(Icons.insert_chart),
-          ),
+              title: const Text('Statistic'),
+              icon: IconButton(
+                icon: const Icon(Icons.insert_chart),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/blankpage');
+                },
+              )),
           BottomNavigationBarItem(
-            title: Text('Reward'),
-            icon: Icon(Icons.emoji_events_rounded),
-          ),
+              title: const Text('Reward'),
+              icon: IconButton(
+                icon: const Icon(Icons.emoji_events_rounded),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/blankpage');
+                },
+              )),
         ],
       ),
       body: ListView(
@@ -176,8 +196,8 @@ class _HomePageState extends State<HomePage> {
                     Navigator.pushNamed(context, '/profile');
                   },
                   child: Container(
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
@@ -497,7 +517,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildFriendlyTips() {
     return Container(
-      margin: const EdgeInsets.only(top: 30, bottom: 50),
+      margin: const EdgeInsets.only(top: 30, bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

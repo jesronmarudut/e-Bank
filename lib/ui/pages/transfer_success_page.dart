@@ -14,15 +14,25 @@ class TransferSuccessPage extends StatelessWidget {
         children: [
           Text(
             'Transfer Success',
-            style: blackTextStyle.copyWith(
-              fontSize: 20,
+            style: purpleTextStyle.copyWith(
+              fontSize: 25,
               fontWeight: semiBold,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
-            height: 26,
+          const SizedBox(height: 10),
+          Container(
+            width: 300,
+            height: 300,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/success.gif',
+                ),
+              ),
+            ),
           ),
+          const SizedBox(height: 10),
           Text(
             'Use the money wisely and\ngrow your finance',
             style: greyTextStyle3.copyWith(
@@ -30,7 +40,7 @@ class TransferSuccessPage extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 40),
           CustomFilledButton(
             width: 183,
             title: 'Back to Home',

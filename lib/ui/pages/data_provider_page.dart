@@ -23,7 +23,7 @@ class DataProviderPage extends StatelessWidget {
           ),
           Text(
             'From Wallet',
-            style: whiteTextStyle.copyWith(
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -43,7 +43,7 @@ class DataProviderPage extends StatelessWidget {
                 children: [
                   Text(
                     '0808 022 6791',
-                    style: whiteTextStyle.copyWith(
+                    style: blackTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: medium,
                     ),

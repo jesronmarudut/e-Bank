@@ -20,11 +20,11 @@ class DataProviderItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 18),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: greyColor,
+        color: whiteColor,
         border: isSelected
             ? Border.all(
-                width: 2,
-                color: greyColor2,
+                width: 1,
+                color: purpleColor,
               )
             : null,
       ),
@@ -40,7 +40,7 @@ class DataProviderItem extends StatelessWidget {
             children: [
               Text(
                 name,
-                style: whiteTextStyle.copyWith(
+                style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: medium,
                 ),
