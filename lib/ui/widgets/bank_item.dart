@@ -50,7 +50,7 @@ class BankItem extends StatelessWidget {
               ),
               Text(
                 '50 mins',
-                style: greyTextStyle.copyWith(
+                style: greenTextStyle.copyWith(
                   fontSize: 12,
                 ),
               ),

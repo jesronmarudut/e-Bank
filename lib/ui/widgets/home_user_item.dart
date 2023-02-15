@@ -17,20 +17,20 @@ class HomeUserItem extends StatelessWidget {
       width: 90,
       height: 120,
       margin: const EdgeInsets.only(
-        right: 17,
+        right: 10,
       ),
       decoration: BoxDecoration(
-        // Border
-        border: Border.all(width: 0.1),
-        borderRadius: BorderRadius.circular(5),
-        color: whiteColor,
-      ),
+          // Border
+          // border: Border.all(width: 0.1),
+          // borderRadius: BorderRadius.circular(5),
+          // color: whiteColor,
+          ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 45,
-            height: 45,
+            width: 55,
+            height: 55,
             margin: const EdgeInsets.only(bottom: 13),
             decoration: BoxDecoration(
               shape: BoxShape.circle,

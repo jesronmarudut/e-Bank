@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bank">
    <application
-        android:label="u-Wallet"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Wallet"
+        android:icon="@mipmap/wallet">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
