@@ -35,7 +35,7 @@ class _DataProviderPageState extends State<DataProviderPage> {
           ),
           Text(
             'From Wallet',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -59,7 +59,7 @@ class _DataProviderPageState extends State<DataProviderPage> {
                         Text(
                           state.user.cardNumber!.replaceAllMapped(
                               RegExp(r".{4}"), (match) => "${match.group(0)} "),
-                          style: blackTextStyle.copyWith(
+                          style: whiteTextStyle.copyWith(
                             fontSize: 16,
                             fontWeight: medium,
                           ),
@@ -85,7 +85,7 @@ class _DataProviderPageState extends State<DataProviderPage> {
           const SizedBox(height: 40),
           Text(
             'Select Provider',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

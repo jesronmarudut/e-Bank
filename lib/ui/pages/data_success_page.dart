@@ -27,7 +27,7 @@ class DataSuccessPage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/success.gif',
+                  'assets/success.png',
                 ),
               ),
             ),
@@ -35,7 +35,7 @@ class DataSuccessPage extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             'Use the money wisely and\ngrow your finance',
-            style: greyTextStyle3.copyWith(
+            style: greyTextStyle.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,

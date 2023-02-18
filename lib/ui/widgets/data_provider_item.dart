@@ -25,7 +25,7 @@ class DataProviderItem extends StatelessWidget {
         color: whiteColor,
         border: Border.all(
           width: 1,
-          color: isSelected ? purpleColor : greyColor4,
+          color: isSelected ? purpleColor : background2,
         ),
       ),
       child: Row(

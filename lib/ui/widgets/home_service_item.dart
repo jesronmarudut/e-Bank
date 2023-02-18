@@ -25,15 +25,7 @@ class HomeServiceItem extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: whiteColor,
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0xffDDDDDD),
-                  blurRadius: 6.0,
-                  spreadRadius: 2.0,
-                  offset: Offset(0.0, 0.0),
-                )
-              ],
+              color: background2,
             ),
             child: Center(
               child: Image.asset(
@@ -44,7 +36,7 @@ class HomeServiceItem extends StatelessWidget {
           ),
           Text(
             title,
-            style: blackTextStyle.copyWith(fontWeight: medium),
+            style: whiteTextStyle.copyWith(fontWeight: medium),
           ),
         ],
       ),

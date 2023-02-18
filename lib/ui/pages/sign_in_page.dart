@@ -36,7 +36,7 @@ class _SignInPageState extends State<SignInPage> {
           }
           if (state is AuthSuccess) {
             Navigator.pushNamedAndRemoveUntil(
-                context, '/home', (route) => false);
+                context, '/main_page', (route) => false);
           }
         },
         builder: (context, state) {
@@ -56,7 +56,7 @@ class _SignInPageState extends State<SignInPage> {
                           image: AssetImage('assets/img_logo_light.png')))),
               Text(
                 'Sign In &\nGrow Your Finance',
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -66,15 +66,7 @@ class _SignInPageState extends State<SignInPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: whiteColor,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0xffDDDDDD),
-                      blurRadius: 6.0,
-                      spreadRadius: 2.0,
-                      offset: Offset(0.0, 0.0),
-                    )
-                  ],
+                  color: background2,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +87,7 @@ class _SignInPageState extends State<SignInPage> {
                     const SizedBox(height: 8),
                     Align(
                       alignment: Alignment.centerRight,
-                      child: Text('Forgot Password', style: greyTextStyle3),
+                      child: Text('Forgot Password', style: greyTextStyle),
                     ),
                     const SizedBox(height: 30),
                     CustomFilledButton(

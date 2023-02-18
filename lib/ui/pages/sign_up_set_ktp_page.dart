@@ -44,7 +44,8 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccess) {
-          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+          Navigator.pushNamedAndRemoveUntil(
+              context, '/main_page', (route) => false);
         }
       },
       builder: (context, state) {
@@ -79,7 +80,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
               ),
               Text(
                 'Verify Your\nAccount',
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -89,15 +90,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: whiteColor,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0xffDDDDDD),
-                      blurRadius: 6.0,
-                      spreadRadius: 2.0,
-                      offset: Offset(0.0, 0.0),
-                    )
-                  ],
+                  color: background2,
                 ),
                 child: Column(
                   children: [
@@ -138,7 +131,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                     ),
                     Text(
                       'Passport/ID Card',
-                      style: blackTextStyle.copyWith(
+                      style: whiteTextStyle.copyWith(
                         fontSize: 18,
                         fontWeight: medium,
                       ),

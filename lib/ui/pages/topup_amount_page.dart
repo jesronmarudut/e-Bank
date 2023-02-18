@@ -66,7 +66,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: background1,
       body: BlocProvider(
         create: (context) => TopupBloc(),
         child: BlocConsumer<TopupBloc, TopupState>(
@@ -98,7 +98,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                 Center(
                   child: Text(
                     'Total Amount',
-                    style: blackTextStyle.copyWith(
+                    style: whiteTextStyle.copyWith(
                         fontSize: 20, fontWeight: semiBold),
                   ),
                 ),
@@ -110,12 +110,12 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                       controller: amountController,
                       enabled: false,
                       // cursorColor: greyColor,
-                      style: blackTextStyle.copyWith(
+                      style: whiteTextStyle.copyWith(
                           fontSize: 36, fontWeight: medium),
                       decoration: InputDecoration(
                         prefixIcon: Text(
                           'Rp ',
-                          style: blackTextStyle.copyWith(
+                          style: whiteTextStyle.copyWith(
                             fontSize: 36,
                             fontWeight: medium,
                           ),
@@ -204,12 +204,12 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                         height: 60,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: greyColor4,
+                          color: background2,
                         ),
                         child: Center(
                           child: Icon(
                             Icons.arrow_back,
-                            color: blackColor,
+                            color: whiteColor,
                           ),
                         ),
                       ),

@@ -19,10 +19,10 @@ class TransferRecentUserItem extends StatelessWidget {
         padding: const EdgeInsets.all(22),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: whiteColor,
+          color: background2,
           border: Border.all(
             width: 1,
-            color: isSelected ? purpleColor : greyColor4,
+            color: isSelected ? purpleColor : background2,
           ),
         ),
         child: Row(
@@ -46,12 +46,12 @@ class TransferRecentUserItem extends StatelessWidget {
                 Text(
                   user.name.toString(),
                   style:
-                      blackTextStyle.copyWith(fontSize: 16, fontWeight: medium),
+                      whiteTextStyle.copyWith(fontSize: 16, fontWeight: medium),
                 ),
                 const SizedBox(height: 2),
                 Text(
                   '@${user.username}',
-                  style: blackTextStyle.copyWith(fontSize: 12),
+                  style: whiteTextStyle.copyWith(fontSize: 12),
                 ),
               ],
             ),
@@ -63,7 +63,7 @@ class TransferRecentUserItem extends StatelessWidget {
                   const SizedBox(width: 4),
                   Text(
                     'Verified',
-                    style: blackTextStyle.copyWith(
+                    style: whiteTextStyle.copyWith(
                       fontSize: 11,
                       fontWeight: medium,
                     ),

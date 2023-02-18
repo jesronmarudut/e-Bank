@@ -1,7 +1,7 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
-import 'package:bank/ui/pages/blank_page.dart';
+import 'package:bank/ui/pages/home/nav_history_page.dart';
 import 'package:bank/ui/widgets/home_latest_transaction_item.dart';
 import 'package:bank/ui/widgets/home_service_item.dart';
 import 'package:bank/ui/widgets/home_tips_item.dart';
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final List<Widget> _children = [
     const HomePage(),
-    const BlankPage(),
+    // const BlankPage(),
   ];
   void onPressed(int Index) {
     setState(() {
@@ -31,59 +31,59 @@ class _HomePageState extends State<HomePage> {
   // @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        type: BottomNavigationBarType.fixed,
-        onTap: onPressed,
-        backgroundColor: whiteColor,
-        selectedItemColor: purpleColor,
-        unselectedItemColor: greyColor3.withOpacity(0.8),
-        showUnselectedLabels: true,
-        showSelectedLabels: true,
-        elevation: 10,
-        items: [
-          BottomNavigationBarItem(
-              title: const Text('Home'),
-              icon: IconButton(
-                icon: const Icon(Icons.home_filled),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/home');
-                },
-              )),
-          BottomNavigationBarItem(
-              title: const Text('History'),
-              icon: IconButton(
-                icon: const Icon(Icons.watch_later),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/blankpage');
-                },
-              )),
-          BottomNavigationBarItem(
-              title: const Text('Transfer'),
-              icon: IconButton(
-                icon: const Icon(Icons.account_balance_wallet_sharp),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/blankpage');
-                },
-              )),
-          BottomNavigationBarItem(
-              title: const Text('Statistic'),
-              icon: IconButton(
-                icon: const Icon(Icons.insert_chart),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/blankpage');
-                },
-              )),
-          BottomNavigationBarItem(
-              title: const Text('Reward'),
-              icon: IconButton(
-                icon: const Icon(Icons.emoji_events_rounded),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/blankpage');
-                },
-              )),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: currentIndex,
+      //   type: BottomNavigationBarType.fixed,
+      //   onTap: onPressed,
+      //   backgroundColor: whiteColor,
+      //   selectedItemColor: purpleColor,
+      //   unselectedItemColor: greyColor3.withOpacity(0.8),
+      //   showUnselectedLabels: true,
+      //   showSelectedLabels: true,
+      //   elevation: 10,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         title: const Text('Home'),
+      //         icon: IconButton(
+      //           icon: const Icon(Icons.home_filled),
+      //           onPressed: () {
+      //             Navigator.pushNamed(context, '/home');
+      //           },
+      //         )),
+      //     BottomNavigationBarItem(
+      //         title: const Text('History'),
+      //         icon: IconButton(
+      //           icon: const Icon(Icons.watch_later),
+      //           onPressed: () {
+      //             Navigator.pushNamed(context, '/blankpage');
+      //           },
+      //         )),
+      //     BottomNavigationBarItem(
+      //         title: const Text('Transfer'),
+      //         icon: IconButton(
+      //           icon: const Icon(Icons.account_balance_wallet_sharp),
+      //           onPressed: () {
+      //             Navigator.pushNamed(context, '/blankpage');
+      //           },
+      //         )),
+      //     BottomNavigationBarItem(
+      //         title: const Text('Statistic'),
+      //         icon: IconButton(
+      //           icon: const Icon(Icons.insert_chart),
+      //           onPressed: () {
+      //             Navigator.pushNamed(context, '/blankpage');
+      //           },
+      //         )),
+      //     BottomNavigationBarItem(
+      //         title: const Text('Reward'),
+      //         icon: IconButton(
+      //           icon: const Icon(Icons.emoji_events_rounded),
+      //           onPressed: () {
+      //             Navigator.pushNamed(context, '/blankpage');
+      //           },
+      //         )),
+      //   ],
+      // ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
@@ -181,13 +181,16 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(state.user.name.toString(),
-                        style: blackTextStyle.copyWith(
-                            fontSize: 16, fontWeight: medium)),
+                    Text('Hello,',
+                        style: whiteTextStyle.copyWith(
+                            fontSize: 18, fontWeight: semiBold)),
+                    // Text(state.user.name.toString(),
+                    //     style: whiteTextStyle.copyWith(
+                    //         fontSize: 16, fontWeight: medium)),
                     const SizedBox(height: 2),
                     Text(
-                      state.user.username.toString(),
-                      style: blackTextStyle.copyWith(fontSize: 16),
+                      state.user.name.toString(),
+                      style: whiteTextStyle.copyWith(fontSize: 16),
                     )
                   ],
                 ),
@@ -274,7 +277,7 @@ class _HomePageState extends State<HomePage> {
                     letterSpacing: 3,
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 Text(
                   'Balance',
                   style: whiteTextStyle.copyWith(
@@ -307,16 +310,16 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: whiteColor,
+        color: Color(0xff17223B),
         // ? Shadow
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0xffDDDDDD),
-            blurRadius: 6.0,
-            spreadRadius: 2.0,
-            offset: Offset(0.0, 0.0),
-          )
-        ],
+        // boxShadow: const [
+        //   BoxShadow(
+        //     color: Color(0xffDDDDDD),
+        //     blurRadius: 6.0,
+        //     spreadRadius: 2.0,
+        //     offset: Offset(0.0, 0.0),
+        //   )
+        // ],
       ),
       child: Column(
         children: [
@@ -324,8 +327,8 @@ class _HomePageState extends State<HomePage> {
             children: [
               Text(
                 'Level 3',
-                style: blackTextStyle.copyWith(
-                  fontWeight: semiBold,
+                style: whiteTextStyle.copyWith(
+                  fontWeight: medium,
                 ),
               ),
               const Spacer(),
@@ -336,7 +339,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Text(formatCurrency(20000),
-                  style: blackTextStyle.copyWith(fontWeight: semiBold))
+                  style: whiteTextStyle.copyWith(fontWeight: semiBold))
             ],
           ),
           const SizedBox(height: 10),
@@ -362,9 +365,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           Text(
             'Do Something',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
-              fontWeight: semiBold,
+              fontWeight: medium,
             ),
           ),
           const SizedBox(
@@ -417,9 +420,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           Text(
             'Transactions',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
-              fontWeight: semiBold,
+              fontWeight: medium,
             ),
           ),
           Container(
@@ -427,15 +430,7 @@ class _HomePageState extends State<HomePage> {
             margin: const EdgeInsets.only(top: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: whiteColor,
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0xffDDDDDD),
-                  blurRadius: 6.0,
-                  spreadRadius: 2.0,
-                  offset: Offset(0.0, 0.0),
-                )
-              ],
+              color: background2,
             ),
             child: Column(
               children: [
@@ -479,9 +474,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           Text(
             'Recent Transaction',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
-              fontWeight: semiBold,
+              fontWeight: medium,
             ),
           ),
           const SizedBox(
@@ -523,9 +518,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           Text(
             'Friendly Tips',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
-              fontWeight: semiBold,
+              fontWeight: medium,
             ),
           ),
           const SizedBox(height: 14),
@@ -583,15 +578,14 @@ class MoreDialog extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: whiteColor,
+          color: background1,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Do More With Us',
-              style:
-                  blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+              style: whiteTextStyle.copyWith(fontSize: 16, fontWeight: medium),
             ),
             const SizedBox(height: 13),
             Wrap(

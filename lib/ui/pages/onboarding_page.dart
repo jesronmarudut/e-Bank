@@ -38,17 +38,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
               CarouselSlider(
                 items: [
                   Image.asset(
-                    'assets/img_onboarding1.gif',
+                    'assets/img_onboarding1.png',
                     height: 500,
                     width: 500,
                   ),
                   Image.asset(
-                    'assets/img_onboarding2.gif',
+                    'assets/img_onboarding2.png',
                     height: 500,
                     width: 500,
                   ),
                   Image.asset(
-                    'assets/img_onboarding3.gif',
+                    'assets/img_onboarding3.png',
                     height: 500,
                     width: 500,
                   ),
@@ -77,28 +77,28 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   vertical: 24,
                 ),
                 decoration: BoxDecoration(
-                  color: whiteColor,
+                  color: background2,
                   borderRadius: BorderRadius.circular(20),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0xffDDDDDD),
-                      blurRadius: 6.0,
-                      spreadRadius: 2.0,
-                      offset: Offset(0.0, 0.0),
-                    )
-                  ],
+                  // boxShadow: const [
+                  //   BoxShadow(
+                  //     color: Color(0xffDDDDDD),
+                  //     blurRadius: 6.0,
+                  //     spreadRadius: 2.0,
+                  //     offset: Offset(0.0, 0.0),
+                  //   )
+                  // ],
                 ),
                 child: Column(
                   children: [
                     Text(titles[currentIndex],
-                        style: blackTextStyle.copyWith(
+                        style: whiteTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: semiBold,
                         ),
                         textAlign: TextAlign.center),
                     const SizedBox(height: 26),
                     Text(subtitles[currentIndex],
-                        style: blackTextStyle.copyWith(
+                        style: whiteTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         textAlign: TextAlign.center),

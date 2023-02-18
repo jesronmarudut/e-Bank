@@ -43,7 +43,7 @@ class _TransferPageState extends State<TransferPage> {
           const SizedBox(height: 30),
           Text(
             'Search',
-            style: blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+            style: whiteTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
           ),
           const SizedBox(height: 16),
           CustomFormField(
@@ -98,7 +98,7 @@ class _TransferPageState extends State<TransferPage> {
         children: [
           Text(
             'Recent Users',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
@@ -145,7 +145,7 @@ class _TransferPageState extends State<TransferPage> {
         children: [
           Text(
             'Result',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

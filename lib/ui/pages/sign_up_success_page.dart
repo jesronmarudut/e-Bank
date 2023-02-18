@@ -25,7 +25,7 @@ class SignUpSuccessPage extends StatelessWidget {
           ),
           Text(
             'Grow your finance start\n together with us',
-            style: greyTextStyle3.copyWith(
+            style: greyTextStyle.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,
@@ -36,7 +36,7 @@ class SignUpSuccessPage extends StatelessWidget {
             title: 'Get Started',
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, '/home', (route) => false);
+                  context, '/main_page', (route) => false);
             },
           )
         ],

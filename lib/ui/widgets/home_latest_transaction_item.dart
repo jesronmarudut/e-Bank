@@ -29,7 +29,7 @@ class HomeLatestTransactionItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: blackTextStyle.copyWith(
+                  style: whiteTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: medium,
                   ),
@@ -37,7 +37,7 @@ class HomeLatestTransactionItem extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   time,
-                  style: greyTextStyle3.copyWith(
+                  style: greyTextStyle.copyWith(
                     fontSize: 12,
                   ),
                 ),

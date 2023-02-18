@@ -48,16 +48,16 @@ class ProfilePage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 22),
                   decoration: BoxDecoration(
-                    color: whiteColor,
+                    color: background2,
                     borderRadius: BorderRadius.circular(20),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0xffDDDDDD),
-                        blurRadius: 6.0,
-                        spreadRadius: 2.0,
-                        offset: Offset(0.0, 0.0),
-                      )
-                    ],
+                    // boxShadow: const [
+                    //   BoxShadow(
+                    //     color: Color(0xffDDDDDD),
+                    //     blurRadius: 6.0,
+                    //     spreadRadius: 2.0,
+                    //     offset: Offset(0.0, 0.0),
+                    //   )
+                    // ],
                   ),
                   child: Column(
                     children: [
@@ -95,7 +95,7 @@ class ProfilePage extends StatelessWidget {
                       const SizedBox(height: 16),
                       Text(
                         state.user.name.toString(),
-                        style: blackTextStyle.copyWith(
+                        style: whiteTextStyle.copyWith(
                           fontSize: 18,
                           fontWeight: medium,
                         ),

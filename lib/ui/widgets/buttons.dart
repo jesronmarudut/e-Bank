@@ -61,7 +61,7 @@ class CustomTextButton extends StatelessWidget {
         style: TextButton.styleFrom(padding: EdgeInsets.zero),
         child: Text(
           title,
-          style: blackTextStyle.copyWith(fontSize: 16, fontWeight: medium),
+          style: whiteTextStyle.copyWith(fontSize: 14, fontWeight: medium),
         ),
       ),
     );
@@ -86,12 +86,12 @@ class CustomInputButton extends StatelessWidget {
         height: 60,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: greyColor4,
+          color: background2,
         ),
         child: Center(
           child: Text(
             title,
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 22,
               fontWeight: medium,
             ),

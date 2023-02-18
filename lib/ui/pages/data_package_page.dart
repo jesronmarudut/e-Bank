@@ -33,7 +33,7 @@ class DataPackagePage extends StatelessWidget {
           ),
           Text(
             'Select Package',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),

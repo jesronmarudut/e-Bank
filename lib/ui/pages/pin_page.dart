@@ -65,7 +65,7 @@ class _PinPageState extends State<PinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: background1,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 58),
@@ -74,7 +74,7 @@ class _PinPageState extends State<PinPage> {
             children: [
               Text(
                 'Your PIN',
-                style: blackTextStyle.copyWith(
+                style: whiteTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: semiBold,
                 ),
@@ -88,13 +88,13 @@ class _PinPageState extends State<PinPage> {
                   controller: pinController,
                   enabled: false,
                   obscureText: true,
-                  cursorColor: greyColor,
+                  cursorColor: whiteColor,
                   obscuringCharacter: '•',
-                  style: blackTextStyle.copyWith(
+                  style: whiteTextStyle.copyWith(
                       fontSize: 50,
                       fontWeight: medium,
                       letterSpacing: 16,
-                      color: isError ? redColor : blackColor),
+                      color: isError ? redColor : whiteColor),
                   // decoration: InputDecoration(
                   //     // disabledBorder: UnderlineInputBorder(
                   //     //   borderSide: BorderSide(
@@ -182,12 +182,12 @@ class _PinPageState extends State<PinPage> {
                       height: 60,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: greyColor4,
+                        color: background2,
                       ),
                       child: Center(
                         child: Icon(
                           Icons.arrow_back,
-                          color: blackColor,
+                          color: whiteColor,
                         ),
                       ),
                     ),

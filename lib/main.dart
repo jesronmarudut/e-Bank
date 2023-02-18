@@ -1,11 +1,15 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
 import 'package:bank/blocs/user/user_bloc.dart';
 import 'package:bank/shared/theme.dart';
-import 'package:bank/ui/pages/blank_page.dart';
+import 'package:bank/ui/pages/Home/main_page.dart';
+import 'package:bank/ui/pages/Home/nav_history_page.dart';
+import 'package:bank/ui/pages/Home/nav_home_page.dart';
+import 'package:bank/ui/pages/Home/nav_reward_page.dart';
+import 'package:bank/ui/pages/Home/nav_statistic_page.dart';
+import 'package:bank/ui/pages/Home/nav_transfer_page.dart';
 import 'package:bank/ui/pages/data_package_page.dart';
 import 'package:bank/ui/pages/data_provider_page.dart';
 import 'package:bank/ui/pages/data_success_page.dart';
-import 'package:bank/ui/pages/home_page.dart';
 import 'package:bank/ui/pages/onboarding_page.dart';
 import 'package:bank/ui/pages/pin_page.dart';
 import 'package:bank/ui/pages/profile_edit_page.dart';
@@ -44,15 +48,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: whiteColor,
+          scaffoldBackgroundColor: background1,
           appBarTheme: AppBarTheme(
-            backgroundColor: whiteColor,
+            backgroundColor: background1,
             elevation: 0,
             centerTitle: true,
             iconTheme: IconThemeData(
-              color: blackColor,
+              color: whiteColor,
             ),
-            titleTextStyle: blackTextStyle.copyWith(
+            titleTextStyle: whiteTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
@@ -61,11 +65,15 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const SplashPage(),
           '/onboarding': (context) => const OnboardingPage(),
-          '/blankpage': (context) => const BlankPage(),
+          '/nav_history_page': (context) => const HistoryPage(),
+          '/nav_transfer_page': (context) => const NavTransferPage(),
+          '/nav_statistic_page': (context) => const StatisticPage(),
+          '/nav_reward_page': (context) => const RewardPage(),
+          '/main_page': (context) => MainPage(),
+          '/home': (context) => const HomePage(),
           '/sign-in': (context) => const SignInPage(),
           '/sign-up': (context) => const SignUpPage(),
           '/sign-up-success': (context) => const SignUpSuccessPage(),
-          '/home': (context) => const HomePage(),
           '/profile': (context) => const ProfilePage(),
           '/pin': (context) => const PinPage(),
           '/profile-edit': (context) => const ProfileEditPage(),

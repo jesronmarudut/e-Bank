@@ -25,7 +25,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
           ),
           Text(
             'Your data is safe with\n our system',
-            style: greyTextStyle3.copyWith(
+            style: greyTextStyle.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,
@@ -36,7 +36,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
             title: 'Back to Home',
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, '/home', (route) => false);
+                  context, '/main_page', (route) => false);
             },
           )
         ],

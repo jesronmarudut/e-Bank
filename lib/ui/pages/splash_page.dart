@@ -20,12 +20,12 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: background1,
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthSuccess) {
             Navigator.pushNamedAndRemoveUntil(
-                context, '/home', (route) => false);
+                context, '/main_page', (route) => false);
           }
           if (state is AuthFailed) {
             Navigator.pushNamedAndRemoveUntil(

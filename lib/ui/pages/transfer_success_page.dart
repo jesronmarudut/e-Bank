@@ -14,7 +14,7 @@ class TransferSuccessPage extends StatelessWidget {
         children: [
           Text(
             'Transfer Success',
-            style: purpleTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 25,
               fontWeight: semiBold,
             ),
@@ -27,7 +27,7 @@ class TransferSuccessPage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/success.gif',
+                  'assets/success.png',
                 ),
               ),
             ),
@@ -35,7 +35,7 @@ class TransferSuccessPage extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             'Use the money wisely and\ngrow your finance',
-            style: greyTextStyle3.copyWith(
+            style: greyTextStyle.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,
@@ -46,7 +46,7 @@ class TransferSuccessPage extends StatelessWidget {
             title: 'Back to Home',
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, '/home', (route) => false);
+                  context, '/main_page', (route) => false);
             },
           )
         ],

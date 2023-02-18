@@ -51,7 +51,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
           ),
           Text(
             'Join Us to Unlock\nYour Growth',
-            style: blackTextStyle.copyWith(
+            style: whiteTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
@@ -63,15 +63,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: whiteColor,
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0xffDDDDDD),
-                  blurRadius: 6.0,
-                  spreadRadius: 2.0,
-                  offset: Offset(0.0, 0.0),
-                )
-              ],
+              color: background2,
             ),
             child: Column(
               children: [
@@ -111,7 +103,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                 const SizedBox(height: 16),
                 Text(
                   'Profile Picture',
-                  style: blackTextStyle.copyWith(
+                  style: whiteTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
                   ),

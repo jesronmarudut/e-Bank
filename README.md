@@ -1,6 +1,6 @@
-# bank
+# Wallet
 
-A new Flutter project.
+Aplikasi Dompet Virtual menggunakan Flutter.
 
 ## Getting Started
 

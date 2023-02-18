@@ -47,7 +47,7 @@ class PackageItem extends StatelessWidget {
           ),
           Text(
             formatCurrency(price),
-            style: greyTextStyle3.copyWith(
+            style: greyTextStyle.copyWith(
               fontSize: 12,
             ),
           ),

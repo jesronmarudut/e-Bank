@@ -65,7 +65,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: background1,
       body: BlocProvider(
         create: (context) => TransferBloc(),
         child: BlocConsumer<TransferBloc, TransferState>(
@@ -101,7 +101,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                 Center(
                   child: Text(
                     'Total Amount',
-                    style: blackTextStyle.copyWith(
+                    style: whiteTextStyle.copyWith(
                         fontSize: 20, fontWeight: semiBold),
                   ),
                 ),
@@ -113,12 +113,12 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                       controller: amountController,
                       enabled: false,
                       cursorColor: whiteColor,
-                      style: blackTextStyle.copyWith(
+                      style: whiteTextStyle.copyWith(
                           fontSize: 36, fontWeight: medium),
                       decoration: InputDecoration(
                         prefixIcon: Text(
                           'Rp ',
-                          style: blackTextStyle.copyWith(
+                          style: whiteTextStyle.copyWith(
                             fontSize: 36,
                             fontWeight: medium,
                           ),
@@ -202,12 +202,12 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                         height: 60,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: greyColor4,
+                          color: background2,
                         ),
                         child: Center(
                           child: Icon(
                             Icons.arrow_back,
-                            color: blackColor,
+                            color: whiteColor,
                           ),
                         ),
                       ),
