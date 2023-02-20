@@ -7,7 +7,6 @@ import 'package:bank/ui/pages/Home/nav_home_page.dart';
 import 'package:bank/ui/pages/Home/nav_reward_page.dart';
 import 'package:bank/ui/pages/Home/nav_statistic_page.dart';
 import 'package:bank/ui/pages/Home/nav_transfer_page.dart';
-import 'package:bank/ui/pages/data_package_page.dart';
 import 'package:bank/ui/pages/data_provider_page.dart';
 import 'package:bank/ui/pages/data_success_page.dart';
 import 'package:bank/ui/pages/onboarding_page.dart';
@@ -22,7 +21,6 @@ import 'package:bank/ui/pages/sign_up_success_page.dart';
 import 'package:bank/ui/pages/splash_page.dart';
 import 'package:bank/ui/pages/topup_page.dart';
 import 'package:bank/ui/pages/topup_success.dart';
-import 'package:bank/ui/pages/transfer_amount_page.dart';
 import 'package:bank/ui/pages/transfer_page.dart';
 import 'package:bank/ui/pages/transfer_success_page.dart';
 import 'package:flutter/material.dart';
@@ -84,7 +82,6 @@ class MyApp extends StatelessWidget {
           '/transfer': (context) => const TransferPage(),
           '/transfer-success': (context) => const TransferSuccessPage(),
           '/data-provider': (context) => const DataProviderPage(),
-          '/data-package': (context) => const DataPackagePage(),
           '/data-success': (context) => const DataSuccessPage(),
           '/reward': (context) => const DataSuccessPage(),
         },

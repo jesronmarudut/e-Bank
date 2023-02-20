@@ -14,7 +14,7 @@ class HistoryPage extends StatelessWidget {
         children: [
           Text(
             'Oops..\nPage Not Found',
-            style: blackTextStyle.copyWith(
+            style: purpleTextStyle.copyWith(
               fontSize: 25,
               fontWeight: semiBold,
             ),

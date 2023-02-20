@@ -42,7 +42,22 @@ class CustomFormField extends StatelessWidget {
             hintStyle: greyTextStyle,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
+              borderSide: BorderSide(
+                color: whiteColor.withOpacity(0.3),
+              ),
             ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(14),
+              borderSide:
+                  BorderSide(color: greyColor4.withOpacity(0.3), width: 1),
+            ),
+            // enabledBorder: OutlineInputBorder(
+            //   borderRadius: BorderRadius.circular(14),
+            //   borderSide: BorderSide(
+            //     color: whiteColor.withOpacity(0.3),
+            //     width: 1,
+            //   ),
+            // ),
             contentPadding: const EdgeInsets.all(12),
           ),
           onFieldSubmitted: onFieldSubmitted,

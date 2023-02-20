@@ -3,6 +3,7 @@ import 'package:bank/blocs/operator_card/operator_card_bloc.dart';
 import 'package:bank/models/operator_card_model.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
+import 'package:bank/ui/pages/data_package_page.dart';
 import 'package:bank/ui/pages/topup_amount_page.dart';
 import 'package:bank/ui/widgets/buttons.dart';
 import 'package:bank/ui/widgets/data_provider_item.dart';
@@ -131,7 +132,9 @@ class _DataProviderPageState extends State<DataProviderPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DataProviderPage(),
+                      builder: (context) => DataPackagePage(
+                        operatorCard: selectedOperatorCard!,
+                      ),
                     ),
                   );
                 },

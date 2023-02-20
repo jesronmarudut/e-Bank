@@ -14,7 +14,7 @@ class StatisticPage extends StatelessWidget {
         children: [
           Text(
             'Oops..\nPage Not Found',
-            style: blackTextStyle.copyWith(
+            style: purpleTextStyle.copyWith(
               fontSize: 25,
               fontWeight: semiBold,
             ),
@@ -26,7 +26,7 @@ class StatisticPage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/404.png',
+                  'assets/404-4.png',
                 ),
               ),
             ),
