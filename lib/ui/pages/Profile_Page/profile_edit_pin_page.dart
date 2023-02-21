@@ -46,28 +46,22 @@ class _ProfileEditPinPageState extends State<ProfileEditPinPage> {
                 padding: const EdgeInsets.all(22),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: whiteColor,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0xffDDDDDD),
-                      blurRadius: 6.0,
-                      spreadRadius: 2.0,
-                      offset: Offset(0.0, 0.0),
-                    )
-                  ],
+                  color: background2,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomFormField(
                       title: 'Old PIN',
-                      // obscureText: true,
+                      keyboardType: TextInputType.number,
+                      obscureText: true,
                       controller: oldPinController,
                     ),
                     const SizedBox(height: 16),
                     CustomFormField(
                       title: 'New PIN',
-                      // obscureText: true,
+                      obscureText: true,
+                      keyboardType: TextInputType.number,
                       controller: newPinController,
                     ),
                     const SizedBox(height: 16),

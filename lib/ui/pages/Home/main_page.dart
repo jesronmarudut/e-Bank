@@ -67,11 +67,11 @@ class _MainPageState extends State<MainPage> {
               icon: Container(
                 margin: const EdgeInsets.only(top: 10, bottom: 7.5),
                 child: Icon(
-                  Icons.paid,
+                  Icons.add_box,
                   color: currentIndex == 2 ? purpleColor : greyColor2,
                 ),
               ),
-              label: 'Pay'),
+              label: 'Transfer'),
           BottomNavigationBarItem(
               icon: Container(
                 margin: const EdgeInsets.only(top: 10, bottom: 7.5),

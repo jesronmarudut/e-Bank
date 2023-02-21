@@ -1,60 +1,60 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
-import 'package:bank/blocs/operator_card/operator_card_bloc.dart';
-import 'package:bank/models/operator_card_model.dart';
-import 'package:bank/shared/shared_methods.dart';
+import 'package:bank/blocs/payment_method/payment_method_bloc.dart';
+import 'package:bank/models/payment_method_model.dart';
+import 'package:bank/models/topup_form_model.dart';
 import 'package:bank/shared/theme.dart';
-import 'package:bank/ui/pages/data_package_page.dart';
-import 'package:bank/ui/pages/topup_amount_page.dart';
+import 'package:bank/ui/pages/TopUp_Page/topup_amount_page.dart';
+import 'package:bank/ui/widgets/bank_item.dart';
 import 'package:bank/ui/widgets/buttons.dart';
-import 'package:bank/ui/widgets/data_provider_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DataProviderPage extends StatefulWidget {
-  const DataProviderPage({Key? key});
+class TopupPage extends StatefulWidget {
+  const TopupPage({Key? key}) : super(key: key);
 
   @override
-  State<DataProviderPage> createState() => _DataProviderPageState();
+  State<TopupPage> createState() => _TopupPageState();
 }
 
-OperatorCardModel? selectedOperatorCard;
+class _TopupPageState extends State<TopupPage> {
+  PaymentMethodModel? selectedPaymentMethod;
 
-class _DataProviderPageState extends State<DataProviderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Buy Package'),
+        title: const Text('Top Up'),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
           const SizedBox(
             height: 30,
           ),
           Text(
-            'From Wallet',
+            'Wallet',
             style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
           ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              Image.asset(
-                'assets/img_wallet.png',
-                width: 80,
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-              BlocBuilder<AuthBloc, AuthState>(
-                builder: (context, state) {
-                  if (state is AuthSuccess) {
-                    return Column(
+          const SizedBox(
+            height: 10,
+          ),
+          BlocBuilder<AuthBloc, AuthState>(
+            builder: (context, state) {
+              if (state is AuthSuccess) {
+                return Row(
+                  children: [
+                    Image.asset(
+                      'assets/img_wallet.png',
+                      width: 80,
+                      height: 55,
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -62,68 +62,72 @@ class _DataProviderPageState extends State<DataProviderPage> {
                               RegExp(r".{4}"), (match) => "${match.group(0)} "),
                           style: whiteTextStyle.copyWith(
                             fontSize: 16,
-                            fontWeight: medium,
+                            fontWeight: semiBold,
                           ),
                         ),
                         const SizedBox(
                           height: 2,
                         ),
                         Text(
-                          // 'Balance: ${formatCurrency(state.user.balance ?? 0)}',
-                          formatCurrency(state.user.balance ?? 0),
-                          style: greyTextStyle.copyWith(
-                            fontSize: 12,
+                          state.user.name.toString(),
+                          style: whiteTextStyle.copyWith(
+                            fontSize: 13,
                           ),
                         ),
                       ],
-                    );
-                  }
-                  return Container();
-                },
-              )
-            ],
+                    ),
+                  ],
+                );
+              }
+              return Container();
+            },
           ),
-          const SizedBox(height: 40),
+          const SizedBox(
+            height: 40,
+          ),
           Text(
-            'Select Provider',
+            'Select Bank',
             style: whiteTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
             ),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(
+            height: 14,
+          ),
           BlocProvider(
-            create: (context) => OperatorCardBloc()..add(OperatorCardGet()),
-            child: BlocBuilder<OperatorCardBloc, OperatorCardState>(
+            create: (context) => PaymentMethodBloc()..add(PaymentMethodGet()),
+            child: BlocBuilder<PaymentMethodBloc, PaymentMethodState>(
               builder: (context, state) {
-                if (state is OperatorCardSuccess) {
+                if (state is PaymentMethodSuccess) {
+                  print(state);
                   return Column(
-                    children: state.operatorCards.map((operatorCard) {
+                    children: state.data.map((paymentMethod) {
                       return GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedOperatorCard = operatorCard;
+                            selectedPaymentMethod = paymentMethod;
                           });
                         },
-                        child: DataProviderItem(
-                          operatorCard: operatorCard,
+                        child: BankItem(
+                          data: paymentMethod,
                           isSelected:
-                              operatorCard.id == selectedOperatorCard?.id,
+                              paymentMethod.id == selectedPaymentMethod?.id,
                         ),
                       );
                     }).toList(),
                   );
                 }
+
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
               },
             ),
           ),
-          const SizedBox(height: 57),
         ],
       ),
-      floatingActionButton: (selectedOperatorCard != null)
+      floatingActionButton: (selectedPaymentMethod != null)
           ? Container(
               margin: const EdgeInsets.all(24),
               child: CustomFilledButton(
@@ -132,8 +136,10 @@ class _DataProviderPageState extends State<DataProviderPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DataPackagePage(
-                        operatorCard: selectedOperatorCard!,
+                      builder: (context) => TopupAmountPage(
+                        data: TopupFormModel(
+                          paymentMethodCode: selectedPaymentMethod?.code,
+                        ),
                       ),
                     ),
                   );

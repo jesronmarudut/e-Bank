@@ -95,13 +95,6 @@ class _PinPageState extends State<PinPage> {
                       fontWeight: medium,
                       letterSpacing: 16,
                       color: isError ? redColor : whiteColor),
-                  // decoration: InputDecoration(
-                  //     // disabledBorder: UnderlineInputBorder(
-                  //     //   borderSide: BorderSide(
-                  //     //     color: greyColor,
-                  //     //   ),
-                  //     // ),
-                  //     ),
                 ),
               ),
               const SizedBox(height: 66),

@@ -31,3 +31,15 @@ Future<XFile?> selectImage() async {
 
   return selectedImage;
 }
+
+String dateToMonthDate(DateTime date) {
+  return DateFormat('EEE, d MMMM y').format(date);
+}
+
+String formatTransactionCurrency(num number) {
+  return NumberFormat.currency(
+    locale: 'id',
+    symbol: '',
+    decimalDigits: 0,
+  ).format(number);
+}

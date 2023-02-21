@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:bank/models/data_plan_form_model.dart';
 import 'package:bank/models/topup_form_model.dart';
+import 'package:bank/models/transaction_model.dart';
 import 'package:bank/models/transfer_form_model.dart';
 import 'package:bank/services/auth_service.dart';
 import 'package:bank/shared/shared_values.dart';
@@ -63,6 +64,31 @@ class TransactionService {
       if (res.statusCode != 200) {
         throw jsonDecode(res.body)['message'];
       }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<List<TransactionModel>> getTransactions() async {
+    try {
+      final token = await AuthService().getToken();
+      final res = await http.get(
+        Uri.parse('$baseUrl/transactions'),
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
+      print(res.body);
+      if (res.statusCode == 200) {
+        List<TransactionModel> transactions = List<TransactionModel>.from(
+          jsonDecode(res.body)['data'].map(
+            (transaction) => TransactionModel.fromJson(transaction),
+          ),
+        ).toList();
+
+        return transactions;
+      }
+      return throw jsonDecode(res.body)['message'];
     } catch (e) {
       rethrow;
     }

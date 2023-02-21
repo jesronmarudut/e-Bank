@@ -1,7 +1,11 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
+import 'package:bank/blocs/transaction/transactions_bloc.dart';
+import 'package:bank/blocs/user/user_bloc.dart';
+import 'package:bank/models/transfer_form_model.dart';
 import 'package:bank/shared/shared_methods.dart';
 import 'package:bank/shared/theme.dart';
 import 'package:bank/ui/pages/home/nav_history_page.dart';
+import 'package:bank/ui/pages/transfer_amount_page.dart';
 import 'package:bank/ui/widgets/home_latest_transaction_item.dart';
 import 'package:bank/ui/widgets/home_service_item.dart';
 import 'package:bank/ui/widgets/home_tips_item.dart';
@@ -31,59 +35,6 @@ class _HomePageState extends State<HomePage> {
   // @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: currentIndex,
-      //   type: BottomNavigationBarType.fixed,
-      //   onTap: onPressed,
-      //   backgroundColor: whiteColor,
-      //   selectedItemColor: purpleColor,
-      //   unselectedItemColor: greyColor3.withOpacity(0.8),
-      //   showUnselectedLabels: true,
-      //   showSelectedLabels: true,
-      //   elevation: 10,
-      //   items: [
-      //     BottomNavigationBarItem(
-      //         title: const Text('Home'),
-      //         icon: IconButton(
-      //           icon: const Icon(Icons.home_filled),
-      //           onPressed: () {
-      //             Navigator.pushNamed(context, '/home');
-      //           },
-      //         )),
-      //     BottomNavigationBarItem(
-      //         title: const Text('History'),
-      //         icon: IconButton(
-      //           icon: const Icon(Icons.watch_later),
-      //           onPressed: () {
-      //             Navigator.pushNamed(context, '/blankpage');
-      //           },
-      //         )),
-      //     BottomNavigationBarItem(
-      //         title: const Text('Transfer'),
-      //         icon: IconButton(
-      //           icon: const Icon(Icons.account_balance_wallet_sharp),
-      //           onPressed: () {
-      //             Navigator.pushNamed(context, '/blankpage');
-      //           },
-      //         )),
-      //     BottomNavigationBarItem(
-      //         title: const Text('Statistic'),
-      //         icon: IconButton(
-      //           icon: const Icon(Icons.insert_chart),
-      //           onPressed: () {
-      //             Navigator.pushNamed(context, '/blankpage');
-      //           },
-      //         )),
-      //     BottomNavigationBarItem(
-      //         title: const Text('Reward'),
-      //         icon: IconButton(
-      //           icon: const Icon(Icons.emoji_events_rounded),
-      //           onPressed: () {
-      //             Navigator.pushNamed(context, '/blankpage');
-      //           },
-      //         )),
-      //   ],
-      // ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
@@ -98,74 +49,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  //     extendBody: true,
-  //     bottomNavigationBar: BottomAppBar(
-  //       color: whiteColor,
-  //       shape: const CircularNotchedRectangle(),
-  //       clipBehavior: Clip.antiAlias,
-  //       notchMargin: 6,
-  //       elevation: 0,
-  //       child: BottomNavigationBar(
-  //         type: BottomNavigationBarType.fixed,
-  //         backgroundColor: greyColor4,
-  //         elevation: 0,
-  //         selectedItemColor: blackColor,
-  //         unselectedItemColor: blueColor,
-  //         showSelectedLabels: true,
-  //         showUnselectedLabels: false,
-  //         selectedLabelStyle: blackTextStyle.copyWith(
-  //           fontSize: 10,
-  //           fontWeight: medium,
-  //         ),
-  //         unselectedLabelStyle: blackTextStyle.copyWith(
-  //           fontSize: 10,
-  //           fontWeight: medium,
-  //         ),
-  //         items: [
-  //           BottomNavigationBarItem(
-  //             icon: Image.asset(
-  //               'assets/ic_overview.png',
-  //               width: 20,
-  //               color: purpleColor,
-  //             ),
-  //             label: 'Overview',
-  //           ),
-  //           BottomNavigationBarItem(
-  //             icon: Image.asset('assets/ic_history.png',
-  //                 width: 20, color: purpleColor),
-  //             label: 'History',
-  //           ),
-  //           BottomNavigationBarItem(
-  //             icon: Image.asset(
-  //               'assets/ic_statistic.png',
-  //               width: 20,
-  //               color: purpleColor,
-  //             ),
-  //             label: 'Statistic',
-  //           ),
-  //           BottomNavigationBarItem(
-  //             icon: Image.asset(
-  //               'assets/ic_reward.png',
-  //               width: 20,
-  //               color: purpleColor,
-  //             ),
-  //             label: 'Reward',
-  //           ),
-  //         ],
-  //       ),
-  //     ),
-  //     floatingActionButton: FloatingActionButton(
-  //       onPressed: () {},
-  //       backgroundColor: greyColor4,
-  //       child: Image.asset(
-  //         'assets/ic_plus_circle.png',
-  //         width: 24,
-  //       ),
-  //     ),
-  //     floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
-  // );
 
   Widget buildProfile(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
@@ -310,16 +193,7 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xff17223B),
-        // ? Shadow
-        // boxShadow: const [
-        //   BoxShadow(
-        //     color: Color(0xffDDDDDD),
-        //     blurRadius: 6.0,
-        //     spreadRadius: 2.0,
-        //     offset: Offset(0.0, 0.0),
-        //   )
-        // ],
+        color: background2,
       ),
       child: Column(
         children: [
@@ -338,8 +212,12 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: semiBold,
                 ),
               ),
-              Text(formatCurrency(20000),
-                  style: whiteTextStyle.copyWith(fontWeight: semiBold))
+              Text(
+                formatCurrency(20000),
+                style: whiteTextStyle.copyWith(
+                  fontWeight: semiBold,
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 10),
@@ -349,7 +227,7 @@ class _HomePageState extends State<HomePage> {
               value: 0.35,
               minHeight: 5,
               valueColor: AlwaysStoppedAnimation(purpleColor),
-              backgroundColor: greyColor4,
+              backgroundColor: greyColor2,
             ),
           ),
         ],
@@ -432,33 +310,23 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(5),
               color: background2,
             ),
-            child: Column(
-              children: [
-                HomeLatestTransactionItem(
-                  iconUrl: 'assets/ic_transaction_cat1.png',
-                  title: 'Top Up',
-                  time: 'Yesterday',
-                  value: '+ ${formatCurrency(450000, symbol: '')}',
-                ),
-                HomeLatestTransactionItem(
-                  iconUrl: 'assets/ic_transaction_cat2.png',
-                  title: 'Cashback',
-                  time: 'Sep 11',
-                  value: '+ ${formatCurrency(22000, symbol: '')}',
-                ),
-                HomeLatestTransactionItem(
-                  iconUrl: 'assets/ic_transaction_cat3.png',
-                  title: 'Withdraw',
-                  time: 'Sep 2',
-                  value: '- ${formatCurrency(4500, symbol: '')}',
-                ),
-                HomeLatestTransactionItem(
-                  iconUrl: 'assets/ic_transaction_cat4.png',
-                  title: 'Transfer',
-                  time: 'Aug 27',
-                  value: '- ${formatCurrency(44500, symbol: '')}',
-                ),
-              ],
+            child: BlocProvider(
+              create: (context) => TransactionsBloc()..add(TransactionGet()),
+              child: BlocBuilder<TransactionsBloc, TransactionsState>(
+                builder: (context, state) {
+                  if (state is TransactionsSuccess) {
+                    return Column(
+                      children: state.transactions.map((transaction) {
+                        return HomeLatestTransactionItem(
+                            transaction: transaction);
+                      }).toList(),
+                    );
+                  }
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+              ),
             ),
           ),
         ],
@@ -482,27 +350,55 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 14,
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: const [
-                HomeUserItem(
-                  imageUrl: 'assets/img_friend1.png',
-                  username: 'Jessica',
-                ),
-                HomeUserItem(
-                  imageUrl: 'assets/img_friend2.png',
-                  username: 'Steffani',
-                ),
-                HomeUserItem(
-                  imageUrl: 'assets/img_friend3.png',
-                  username: 'Michael',
-                ),
-                HomeUserItem(
-                  imageUrl: 'assets/img_friend4.png',
-                  username: 'David',
-                ),
-              ],
+          BlocProvider(
+            create: (context) => UserBloc()..add(UserGetRecent()),
+            child: BlocBuilder<UserBloc, UserState>(
+              builder: (context, state) {
+                if (state is UserSuccess) {
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                        children: state.users.map((user) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TransferAmountPage(
+                                data: TransferFormModel(
+                                  sendTo: user.username,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        child: HomeUserItem(
+                          user: user,
+                        ),
+                      );
+                    }).toList()
+                        // ? Statis
+                        // HomeUserItem(
+                        //   imageUrl: 'assets/img_friend1.png',
+                        //   username: 'Jessica',
+                        // ),
+                        // HomeUserItem(
+                        //   imageUrl: 'assets/img_friend2.png',
+                        //   username: 'Steffani',
+                        // ),
+                        // HomeUserItem(
+                        //   imageUrl: 'assets/img_friend3.png',
+                        //   username: 'Michael',
+                        // ),
+                        // HomeUserItem(
+                        //   imageUrl: 'assets/img_friend4.png',
+                        //   username: 'David',
+                        // ),
+                        ),
+                  );
+                }
+                return const Center(child: CircularProgressIndicator());
+              },
             ),
           ),
         ],

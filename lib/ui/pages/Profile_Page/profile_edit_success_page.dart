@@ -13,24 +13,34 @@ class ProfileEditSuccessPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Profile successfully updated.',
-            style: blackTextStyle.copyWith(
-              fontSize: 20,
+            'Profile successfully updated',
+            style: whiteTextStyle.copyWith(
+              fontSize: 25,
               fontWeight: semiBold,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
-            height: 26,
+          const SizedBox(height: 10),
+          Container(
+            width: 300,
+            height: 300,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/success.png',
+                ),
+              ),
+            ),
           ),
+          const SizedBox(height: 10),
           Text(
-            'Your data is safe with\n our system',
+            'Your data is safe with\nour system',
             style: greyTextStyle.copyWith(
               fontSize: 16,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 40),
           CustomFilledButton(
             width: 183,
             title: 'Back to Home',

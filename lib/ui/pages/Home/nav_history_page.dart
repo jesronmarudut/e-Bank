@@ -26,7 +26,7 @@ class HistoryPage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/404-4.png',
+                  'assets/404.gif',
                 ),
               ),
             ),
