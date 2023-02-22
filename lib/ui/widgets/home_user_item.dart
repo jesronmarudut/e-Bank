@@ -68,8 +68,8 @@ class HomeUserItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 55,
-            height: 55,
+            width: 60,
+            height: 60,
             margin: const EdgeInsets.only(bottom: 13),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
@@ -84,9 +84,10 @@ class HomeUserItem extends StatelessWidget {
             ),
           ),
           Text(
-            '@${user.name}',
+            // '@${user.name}',
+            user.name.toString(),
             style: greyTextStyle.copyWith(
-              fontSize: 12,
+              fontSize: 13,
               fontWeight: medium,
             ),
           ),

@@ -50,14 +50,6 @@ class ProfilePage extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: background2,
                     borderRadius: BorderRadius.circular(20),
-                    // boxShadow: const [
-                    //   BoxShadow(
-                    //     color: Color(0xffDDDDDD),
-                    //     blurRadius: 6.0,
-                    //     spreadRadius: 2.0,
-                    //     offset: Offset(0.0, 0.0),
-                    //   )
-                    // ],
                   ),
                   child: Column(
                     children: [

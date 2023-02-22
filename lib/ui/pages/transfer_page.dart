@@ -90,9 +90,7 @@ class _TransferPageState extends State<TransferPage> {
 
   Widget buildRecentUsers() {
     return Container(
-      margin: const EdgeInsets.only(
-        top: 40,
-      ),
+      margin: const EdgeInsets.only(top: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

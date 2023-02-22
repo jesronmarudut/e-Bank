@@ -8,31 +8,36 @@ class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Oops..\nPage Not Found',
-            style: purpleTextStyle.copyWith(
-              fontSize: 25,
-              fontWeight: semiBold,
-            ),
-            textAlign: TextAlign.center,
+        appBar: AppBar(
+          title: const Text(
+            'History',
           ),
-          Container(
-            width: 350,
-            height: 350,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/404.gif',
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Oops..\nPage Not Found',
+                style: purpleTextStyle.copyWith(
+                  fontSize: 25,
+                  fontWeight: semiBold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Container(
+                width: 350,
+                height: 350,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/404.gif',
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
-    ));
+        ));
   }
 }

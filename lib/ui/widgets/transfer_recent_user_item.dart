@@ -50,7 +50,8 @@ class TransferRecentUserItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  '@${user.username}',
+                  // '@${user.username}',
+                  user.username.toString(),
                   style: whiteTextStyle.copyWith(fontSize: 12),
                 ),
               ],

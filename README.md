@@ -1,9 +1,9 @@
 # Wallet
 
-Aplikasi Dompet Virtual menggunakan Flutter.
+Aplikasi dompet Virtual yang dapat melakukan transaksi dan terintegrasi dengan Payment Gateway Midtrans. Aplikasi ini dibuat menggunakan Flutter.
 
 ## Getting Started
-
+![image](/assets/Cover.jpg "Cover")
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:

@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(28),
               image: const DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/img_bg_card.png'),
+                image: AssetImage('assets/img_bg_card2.png'),
               ),
             ),
             child: Column(
@@ -147,8 +147,8 @@ class _HomePageState extends State<HomePage> {
                 Text(
                   state.user.name.toString(),
                   style: whiteTextStyle.copyWith(
-                    fontSize: 20,
-                    fontWeight: semiBold,
+                    fontSize: 25,
+                    fontWeight: bold,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -162,16 +162,16 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  'Balance',
+                  'Your Total Balance',
                   style: whiteTextStyle.copyWith(
-                    fontSize: 20,
-                    fontWeight: semiBold,
+                    fontSize: 18,
+                    fontWeight: medium,
                   ),
                 ),
                 Text(
                   formatCurrency(state.user.balance ?? 0),
                   style: whiteTextStyle.copyWith(
-                    fontSize: 24,
+                    fontSize: 25,
                     fontWeight: bold,
                     letterSpacing: 1.5,
                   ),
@@ -213,7 +213,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Text(
-                formatCurrency(20000),
+                formatCurrency(6923435),
                 style: whiteTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
@@ -347,9 +347,7 @@ class _HomePageState extends State<HomePage> {
               fontWeight: medium,
             ),
           ),
-          const SizedBox(
-            height: 14,
-          ),
+          const SizedBox(height: 5),
           BlocProvider(
             create: (context) => UserBloc()..add(UserGetRecent()),
             child: BlocBuilder<UserBloc, UserState>(

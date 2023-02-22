@@ -3,10 +3,7 @@ import 'package:bank/ui/pages/Home/nav_reward_page.dart';
 import 'package:bank/ui/pages/Home/nav_statistic_page.dart';
 import 'package:bank/ui/pages/Home/nav_transfer_page.dart';
 import 'package:bank/ui/pages/home/nav_history_page.dart';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'nav_home_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -80,7 +77,7 @@ class _MainPageState extends State<MainPage> {
                   color: currentIndex == 3 ? purpleColor : greyColor2,
                 ),
               ),
-              label: 'Analytics'),
+              label: 'Statistic'),
           BottomNavigationBarItem(
               icon: Container(
                 margin: const EdgeInsets.only(top: 10, bottom: 7.5),
@@ -90,15 +87,6 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               label: 'Reward'),
-          // icon: Container(
-          //   margin: EdgeInsets.only(top: 10, bottom: 7.5),
-          //   child: Image.asset(
-          //     'assets/icon_profile.png',
-          //     width: 23,
-          //     color: currentIndex == 4 ? warna2 : Color(0xff504F5E),
-          //   ),
-          // ),
-          // label: 'Profile'),
         ],
         // selectedLabelStyle: bacground2TextStyle,
 
