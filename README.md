@@ -2,7 +2,7 @@
 
 Aplikasi dompet Virtual yang dapat melakukan transaksi dan terintegrasi dengan Payment Gateway Midtrans. Aplikasi ini dibuat menggunakan Flutter.
 
-![image](/assets/Cover.jpg "Cover")
+![image](/assets/Cover.png "Cover")
 <!-- ## Getting Started -->
 <!-- This project is a starting point for a Flutter application.
 
