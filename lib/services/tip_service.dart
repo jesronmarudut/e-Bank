@@ -5,7 +5,7 @@ import 'package:bank/services/auth_service.dart';
 import 'package:http/http.dart' as http;
 
 class TipsService {
-  final String baseUrl = 'https://bwabank.tech/api';
+  final String baseUrl = 'https://bwabank.my.id/api';
 
   Future<List<TipsModel>> getTips() async {
     try {

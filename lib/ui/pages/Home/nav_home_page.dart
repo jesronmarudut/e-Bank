@@ -1,4 +1,5 @@
 import 'package:bank/blocs/auth/auth_bloc.dart';
+import 'package:bank/blocs/tip/tip_bloc.dart';
 import 'package:bank/blocs/transaction/transactions_bloc.dart';
 import 'package:bank/blocs/user/user_bloc.dart';
 import 'package:bank/models/transfer_form_model.dart';
@@ -420,35 +421,57 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 14),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Wrap(
-              runSpacing: 18,
-              spacing: 17,
-              children: const [
-                HomeTipsItem(
-                  imageUrl: 'assets/img_tips1.png',
-                  title:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                  url: 'https://www.google.com',
-                ),
-                HomeTipsItem(
-                  imageUrl: 'assets/img_tips2.png',
-                  title:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                  url: 'https://www.google.com',
-                ),
-                HomeTipsItem(
-                  imageUrl: 'assets/img_tips3.png',
-                  title:
-                      'Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                  url: 'https://www.google.com',
-                ),
-                HomeTipsItem(
-                  imageUrl: 'assets/img_tips4.png',
-                  title:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                  url: 'https://www.google.com',
-                ),
-              ],
+            child: BlocProvider(
+              create: (context) => TipsBloc()..add(TipsGet()),
+              child: BlocBuilder<TipsBloc, TipState>(
+                builder: (context, state) {
+                  if (state is TipsSuccess) {
+                    return Wrap(
+                        runSpacing: 18,
+                        spacing: 17,
+                        children: state.tips.map((tips) {
+                          return HomeTipsItem(tips: tips);
+                        }).toList()
+                        // ! Untuk get data Tip
+                        // state.tips.map((tip) {
+                        //   return HomeTipsItem(tip: tip);
+                        // }).toList()
+
+                        //? Static
+                        // [
+                        //   HomeTipsItem(
+                        //     imageUrl: 'assets/img_tips1.png',
+                        //     title:
+                        //         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                        //     url: 'https://www.google.com',
+                        //   ),
+                        //   HomeTipsItem(
+                        //     imageUrl: 'assets/img_tips2.png',
+                        //     title:
+                        //         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                        //     url: 'https://www.google.com',
+                        //   ),
+                        //   HomeTipsItem(
+                        //     imageUrl: 'assets/img_tips3.png',
+                        //     title:
+                        //         'Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                        //     url: 'https://www.google.com',
+                        //   ),
+                        //   HomeTipsItem(
+                        //     imageUrl: 'assets/img_tips4.png',
+                        //     title:
+                        //         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                        //     url: 'https://www.google.com',
+                        //   ),
+
+                        // ],
+                        );
+                  }
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+              ),
             ),
           ),
         ],
