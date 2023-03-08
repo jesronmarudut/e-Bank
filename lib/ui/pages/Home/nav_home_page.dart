@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: bold,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Text(
                   '**** **** **** ${state.user.cardNumber!.substring(12, 16)}',
                   style: whiteTextStyle.copyWith(
@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                     letterSpacing: 3,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Text(
                   'Your Total Balance',
                   style: whiteTextStyle.copyWith(
